@@ -12,7 +12,7 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
         *,
         fraction_fit=0.3,
         fraction_evaluate=0.2,
-        min_fit_clients=2,
+        min_fit_clients=1,
         min_evaluate_clients=1,
         min_available_clients=2,
         evaluate_fn=None,
@@ -50,17 +50,17 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
                 num_rounds=data['num_rounds']
                 session=data['session']
 
-            if not os.path.exists(f"./server/fl_sessions/Session-{session}"):
-                os.makedirs(f"./server/fl_sessions/Session-{session}")
+            if not os.path.exists(f"./Server/fl_sessions/Session-{session}"):
+                os.makedirs(f"./Server/fl_sessions/Session-{session}")
                 if  server_round < num_rounds:
-                    np.save(f"./server/fl_sessions/Session-{session}/round-{server_round}-weights.npy", aggregated_weights)
+                    np.save(f"./Server/fl_sessions/Session-{session}/round-{server_round}-weights.npy", aggregated_weights)
                 elif server_round==num_rounds:
-                    np.save(f"./server/fl_sessions/Session-{session}/global_session_model.npy", aggregated_weights)
+                    np.save(f"./Server/fl_sessions/Session-{session}/global_session_model.npy", aggregated_weights)
             else:
                 if  server_round < num_rounds:
-                    np.save(f"./server/fl_sessions/Session-{session}/round-{server_round}-weights.npy", aggregated_weights)
+                    np.save(f"./Server/fl_sessions/Session-{session}/round-{server_round}-weights.npy", aggregated_weights)
                 elif server_round==num_rounds:
-                    np.save(f"./server/fl_sessions/Session-{session}/global_session_model.npy", aggregated_weights)
+                    np.save(f"./Server/fl_sessions/Session-{session}/global_session_model.npy", aggregated_weights)
 
 
         # loop through the results and update contribution (pairs of key, value) where
@@ -81,9 +81,9 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
 
 
 
-        #     if not (os.path.exists(f'./server/Global-weights')):
-        #         os.mkdir(f"./server/Global-weights")
-        #     filename = f"./server/Global-weights/round-{server_round}-weights.npy"
+        #     if not (os.path.exists(f'./Server/Global-weights')):
+        #         os.mkdir(f"./Server/Global-weights")
+        #     filename = f"./Server/Global-weights/round-{server_round}-weights.npy"
         #     # Save weights
         #     print(f"Saving round {server_round} weights...")
         #     np.save(filename, aggregate_weights)

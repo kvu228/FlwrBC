@@ -1,11 +1,14 @@
 import argparse
-from fileinput import filename
 import os
-from pathlib import Path
 import hashlib
-import tensorflow as tf
 import numpy as np
+
+import tensorflow as tf
 import flwr as fl
+
+from blockchain_service import *
+
+blockchainService = BlockchainService()
 
 
 # Make TensorFlow logs less verbose
@@ -14,11 +17,12 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
 # Define Flower client
 class CifarClient(fl.client.NumPyClient):
-    def __init__(self, model, x_train, y_train, x_test, y_test,client_id):
+    def __init__(self, model, x_train, y_train, x_test, y_test,client_id, client_address):
         self.model = model
         self.x_train, self.y_train = x_train, y_train
         self.x_test, self.y_test = x_test, y_test
         self.client_id = client_id
+        self.client_address = client_address
 
     def get_properties(self, config):
         """Get properties of client."""
@@ -61,22 +65,23 @@ class CifarClient(fl.client.NumPyClient):
         }
 
         # Save training weights in the created directory
-        if not (os.path.exists(f'./client/Local-weights')):
-            os.mkdir(f"./client/Local-weights")
+        if not (os.path.exists(f'./Client/Local-weights')):
+            os.mkdir(f"./Client/Local-weights")
 
-        if not (os.path.exists(f'./client/Local-weights/Client-{self.client_id}')):
-            os.mkdir(f"./client/Local-weights/Client-{self.client_id}")
+        if not (os.path.exists(f'./Client/Local-weights/Client-{self.client_id}')):
+            os.mkdir(f"./Client/Local-weights/Client-{self.client_id}")
 
-        if not (os.path.exists(f'./client/Local-weights/Client-{self.client_id}/Session-{session}')):
-            os.mkdir(f"./client/Local-weights/Client-{self.client_id}/Session-{session}")       
+        if not (os.path.exists(f'.Client/Local-weights/Client-{self.client_id}/Session-{session}')):
+            os.mkdir(f"./Client/Local-weights/Client-{self.client_id}/Session-{session}")       
 
-        filename = f'./client/Local-weights/Client-{self.client_id}/Session-{session}/Round-{round}-training-weights.npy'
+        filename = f'./Client/Local-weights/Client-{self.client_id}/Session-{session}/Round-{round}-training-weights.npy'
         np.save(filename, parameters_prime)
         with open(filename,"rb") as f:
             bytes = f.read() # read entire file as bytes
             readable_hash = hashlib.sha256(bytes).hexdigest() #hash the file
             print(readable_hash)
 
+        bcResult = blockchainService.addWeight(_session=session,_round_num=round, _dataSize=num_examples_train, _filePath = filename, _fileHash = readable_hash)
         return parameters_prime, num_examples_train, results
 
     def evaluate(self, parameters, config):
@@ -98,22 +103,22 @@ class CifarClient(fl.client.NumPyClient):
         num_examples_test = len(self.x_test)
 
         # Create directory for global weights
-        if not (os.path.exists(f'./client/Global-weights')):
-            os.mkdir(f"./client/Global-weights")
-        if not (os.path.exists(f'./client/Global-weights/Session-{session}')):
-            os.mkdir(f"./client/Global-weights/Session-{session}")
-        # if not (os.path.exists(f'./client/Global-weights/Client-{self.client_id}')):
-        #     os.mkdir(f"./client/Global-weights/Client-{self.client_id}")
-        # if not (os.path.exists(f'./client/Global-weights/Client-{self.client_id}/Session-{session}')):
-        #     os.mkdir(f"./client/Global-weights/Client-{self.client_id}/Session-{session}")
+        if not (os.path.exists(f'./Client/Global-weights')):
+            os.mkdir(f"./Client/Global-weights")
+        if not (os.path.exists(f'./Client/Global-weights/Session-{session}')):
+            os.mkdir(f"./Client/Global-weights/Session-{session}")
+        # if not (os.path.exists(f'./Client/Global-weights/Client-{self.client_id}')):
+        #     os.mkdir(f"./Client/Global-weights/Client-{self.client_id}")
+        # if not (os.path.exists(f'./Client/Global-weights/Client-{self.client_id}/Session-{session}')):
+        #     os.mkdir(f"./Client/Global-weights/Client-{self.client_id}/Session-{session}")
 
-        filename = f'./client/Global-weights/Session-{session}/Round-{round}-Global-weights.npy'
+        filename = f'./Client/Global-weights/Session-{session}/Round-{round}-Global-weights.npy'
         if not (os.path.exists(filename)):
             np.save(filename, global_rnd_model)
 
         return loss, num_examples_test, {"accuracy": accuracy}
 
-
+'''
 def main() -> None:
     # Parse command line argument `partition`
     parser = argparse.ArgumentParser(description="Flower")
@@ -137,8 +142,9 @@ def main() -> None:
         server_address="127.0.0.1:8080",
         client=client,
     )
+'''
 
-
+'''
 def load_partition(client_id: int):
     """Load 1/5th of the training and test data to simulate a partition."""
     assert client_id in range(5)
@@ -150,7 +156,7 @@ def load_partition(client_id: int):
         x_test[client_id * 1000 : (client_id + 1) * 1000],
         y_test[client_id * 1000 : (client_id + 1) * 1000],
     )
+'''
 
-
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

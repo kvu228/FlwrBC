@@ -24,16 +24,16 @@ def launch_fl_session(num_rounds: int, resume: bool):
             json.dump(data,config_training)
     
     # Load last session parameters if they exist
-    if not (os.path.exists('./server/fl_sessions')):
+    if not (os.path.exists('./Server/fl_sessions')):
     # create fl_sessions directory if first time
-        os.mkdir('./server/fl_sessions')
+        os.mkdir('./Server/fl_sessions')
 
     # initialise sessions list and initial parameters
     sessions = []
     initial_params = None
 
     # loop through fl_sessions sub-folders and get the list of directories containing the weights 
-    for root, dirs, files in os.walk("./server/fl_sessions", topdown = False):
+    for root, dirs, files in os.walk("./Server/fl_sessions", topdown = False):
         for name in dirs:
             if name.find('Session')!=-1:
                 sessions.append(name)
@@ -42,9 +42,9 @@ def launch_fl_session(num_rounds: int, resume: bool):
     if (resume and len(sessions)!=0):
         # test if we will start training from the last session weights and
         # if we have at least a session directory
-        if os.path.exists(f'./server/fl_sessions/{sessions[-1]}/global_session_model.npy'):
+        if os.path.exists(f'./Server/fl_sessions/{sessions[-1]}/global_session_model.npy'):
             # if the latest session directory contains the global model parameters
-            initial_parameters = np.load(f"./server/fl_sessions/{sessions[-1]}/global_session_model.npy", allow_pickle=True)
+            initial_parameters = np.load(f"./Server/fl_sessions/{sessions[-1]}/global_session_model.npy", allow_pickle=True)
             # load latest session's global model parameters
             initial_params = initial_parameters[0]
 
@@ -52,9 +52,9 @@ def launch_fl_session(num_rounds: int, resume: bool):
         strategy = SaveModelStrategy(
             fraction_fit=0.3,
             fraction_evaluate=0.2,
-            min_fit_clients=2,
+            min_fit_clients=1,
             min_evaluate_clients=1,
-            min_available_clients=2,
+            min_available_clients=1,
             on_fit_config_fn=fit_config,
             on_evaluate_config_fn=evaluate_config,
             initial_parameters = initial_params,
@@ -62,7 +62,7 @@ def launch_fl_session(num_rounds: int, resume: bool):
 
         # Start Flower server
         fl.server.start_server(
-            server_address="0.0.0.0:8080",
+            server_address="127.0.0.1:8080",
             config=fl.server.ServerConfig(num_rounds=num_rounds),
             strategy=strategy,
         )
@@ -76,9 +76,9 @@ def launch_fl_session(num_rounds: int, resume: bool):
         strategy = SaveModelStrategy(
             fraction_fit=0.3,
             fraction_evaluate=0.2,
-            min_fit_clients=2,
+            min_fit_clients=1,
             min_evaluate_clients=1,
-            min_available_clients=2,
+            min_available_clients=1,
             on_fit_config_fn=fit_config,
             evaluate_fn=get_evaluate_fn(model),
             on_evaluate_config_fn=evaluate_config,
@@ -87,7 +87,7 @@ def launch_fl_session(num_rounds: int, resume: bool):
 
         # Start Flower server (SSL-enabled) for four rounds of federated learning
         fl.server.start_server(
-            server_address="0.0.0.0:8080",
+            server_address="127.0.0.1:8080",
             config=fl.server.ServerConfig(num_rounds=num_rounds),
             strategy=strategy,
         )
