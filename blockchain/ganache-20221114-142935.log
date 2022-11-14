@@ -1,0 +1,142 @@
+[2022/11/14 15:30:31.982] - eth_getFilterChanges
+[2022/11/14 15:30:31.983] -    > {
+   >   "jsonrpc": "2.0",
+   >   "method": "eth_getFilterChanges",
+   >   "params": [
+   >     "0x7"
+   >   ],
+   >   "id": 76
+   > }
+[2022/11/14 15:30:32.015] -  <   {
+ <     "id": 76,
+ <     "jsonrpc": "2.0",
+ <     "result": []
+ <   }
+[2022/11/14 15:30:37.023] - eth_getFilterChanges
+[2022/11/14 15:30:37.024] -    > {
+   >   "jsonrpc": "2.0",
+   >   "method": "eth_getFilterChanges",
+   >   "params": [
+   >     "0x7"
+   >   ],
+   >   "id": 77
+   > }
+[2022/11/14 15:30:37.053] -  <   {
+ <     "id": 77,
+ <     "jsonrpc": "2.0",
+ <     "result": []
+ <   }
+[2022/11/14 15:30:42.063] - eth_getFilterChanges
+[2022/11/14 15:30:42.064] -    > {
+   >   "jsonrpc": "2.0",
+   >   "method": "eth_getFilterChanges",
+   >   "params": [
+   >     "0x7"
+   >   ],
+   >   "id": 79
+   > }
+[2022/11/14 15:30:42.083] -  <   {
+ <     "id": 79,
+ <     "jsonrpc": "2.0",
+ <     "result": []
+ <   }
+[2022/11/14 15:30:44.554] - eth_unsubscribe
+[2022/11/14 15:30:44.554] -    > {
+   >   "jsonrpc": "2.0",
+   >   "id": 69,
+   >   "method": "eth_unsubscribe",
+   >   "params": [
+   >     "0x3"
+   >   ]
+   > }
+[2022/11/14 15:30:44.555] - eth_unsubscribe
+[2022/11/14 15:30:44.555] -    > {
+   >   "jsonrpc": "2.0",
+   >   "id": 70,
+   >   "method": "eth_unsubscribe",
+   >   "params": [
+   >     "0x4"
+   >   ]
+   > }
+[2022/11/14 15:30:44.556] -  <   {
+ <     "id": 69,
+ <     "jsonrpc": "2.0",
+ <     "result": true
+ <   }
+[2022/11/14 15:30:44.557] -    > {
+   >   "jsonrpc": "2.0",
+   >   "method": "eth_unsubscribe",
+   >   "params": [
+   >     "0x6"
+   >   ],
+   >   "id": 1668414644557
+   > }
+[2022/11/14 15:30:44.558] -    > {
+   >   "jsonrpc": "2.0",
+   >   "method": "eth_unsubscribe",
+   >   "params": [
+   >     "0x4"
+   >   ],
+   >   "id": 1668414644558
+   > }
+[2022/11/14 15:30:44.558] -    > {
+   >   "jsonrpc": "2.0",
+   >   "method": "eth_unsubscribe",
+   >   "params": [
+   >     "0x5"
+   >   ],
+   >   "id": 1668414644558
+   > }
+[2022/11/14 15:30:44.559] -    > {
+   >   "jsonrpc": "2.0",
+   >   "method": "eth_unsubscribe",
+   >   "params": [
+   >     "0x1"
+   >   ],
+   >   "id": 1668414644559
+   > }
+[2022/11/14 15:30:44.559] -    > {
+   >   "jsonrpc": "2.0",
+   >   "method": "eth_unsubscribe",
+   >   "params": [
+   >     "0x2"
+   >   ],
+   >   "id": 1668414644559
+   > }
+[2022/11/14 15:30:44.560] -  <   {
+ <     "id": 70,
+ <     "jsonrpc": "2.0",
+ <     "result": true
+ <   }
+[2022/11/14 15:30:44.578] -  <   {
+ <     "id": 1668414644557,
+ <     "jsonrpc": "2.0",
+ <     "result": true
+ <   }
+[2022/11/14 15:30:44.593] -  <   {
+ <     "id": 1668414644558,
+ <     "jsonrpc": "2.0",
+ <     "error": {
+ <       "message": "Subscription ID 0x4 not found.",
+ <       "code": -32000,
+ <       "data": {
+ <         "stack": "Error: Subscription ID 0x4 not found.\n    at SubscriptionSubprovider.eth_unsubscribe (C:\\Program Files\\WindowsApps\\GanacheUI_2.5.4.0_x64__5dg5pnz03psnj\\app\\resources\\static\\node\\node_modules\\ganache-core\\node_modules\\web3-provider-engine\\subproviders\\subscriptions.js:78:8)\n    at SubscriptionSubprovider.handleRequest (C:\\Program Files\\WindowsApps\\GanacheUI_2.5.4.0_x64__5dg5pnz03psnj\\app\\resources\\static\\node\\node_modules\\ganache-core\\node_modules\\web3-provider-engine\\subproviders\\subscriptions.js:134:12)\n    at next (C:\\Program Files\\WindowsApps\\GanacheUI_2.5.4.0_x64__5dg5pnz03psnj\\app\\resources\\static\\node\\node_modules\\ganache-core\\node_modules\\web3-provider-engine\\index.js:136:18)\n    at DelayedBlockFilter.handleRequest (C:\\Program Files\\WindowsApps\\GanacheUI_2.5.4.0_x64__5dg5pnz03psnj\\app\\resources\\static\\node\\node_modules\\ganache-core\\lib\\subproviders\\delayedblockfilter.js:31:3)\n    at next (C:\\Program Files\\WindowsApps\\GanacheUI_2.5.4.0_x64__5dg5pnz03psnj\\app\\resources\\static\\node\\node_modules\\ganache-core\\node_modules\\web3-provider-engine\\index.js:136:18)\n    at RequestFunnel.handleRequest (C:\\Program Files\\WindowsApps\\GanacheUI_2.5.4.0_x64__5dg5pnz03psnj\\app\\resources\\static\\node\\node_modules\\ganache-core\\lib\\subproviders\\requestfunnel.js:32:12)\n    at next (C:\\Program Files\\WindowsApps\\GanacheUI_2.5.4.0_x64__5dg5pnz03psnj\\app\\resources\\static\\node\\node_modules\\ganache-core\\node_modules\\web3-provider-engine\\index.js:136:18)\n    at Web3ProviderEngine._handleAsync (C:\\Program Files\\WindowsApps\\GanacheUI_2.5.4.0_x64__5dg5pnz03psnj\\app\\resources\\static\\node\\node_modules\\ganache-core\\node_modules\\web3-provider-engine\\index.js:123:3)\n    at Timeout._onTimeout (C:\\Program Files\\WindowsApps\\GanacheUI_2.5.4.0_x64__5dg5pnz03psnj\\app\\resources\\static\\node\\node_modules\\ganache-core\\node_modules\\web3-provider-engine\\index.js:107:12)\n    at listOnTimeout (internal/timers.js:531:17)\n    at processTimers (internal/timers.js:475:7)",
+ <         "name": "Error"
+ <       }
+ <     }
+ <   }
+[2022/11/14 15:30:44.609] -  <   {
+ <     "id": 1668414644558,
+ <     "jsonrpc": "2.0",
+ <     "result": true
+ <   }
+[2022/11/14 15:30:44.624] -  <   {
+ <     "id": 1668414644559,
+ <     "jsonrpc": "2.0",
+ <     "result": true
+ <   }
+[2022/11/14 15:30:44.640] -  <   {
+ <     "id": 1668414644559,
+ <     "jsonrpc": "2.0",
+ <     "result": true
+ <   }

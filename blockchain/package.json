@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "ganache": "^7.5.0",
+    "truffle": "^5.6.3"
+  }
+}
