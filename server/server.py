@@ -55,7 +55,7 @@ def launch_fl_session(num_rounds: int, resume: bool):
             min_fit_clients=1,
             min_evaluate_clients=1,
             min_available_clients=1,
-            on_fit_config_fn=fit_config,
+            on_fit_config_fn=get_on_fit_config_fn(),
             on_evaluate_config_fn=evaluate_config,
             initial_parameters = initial_params,
         )
@@ -79,13 +79,13 @@ def launch_fl_session(num_rounds: int, resume: bool):
             min_fit_clients=1,
             min_evaluate_clients=1,
             min_available_clients=1,
-            on_fit_config_fn=fit_config,
+            on_fit_config_fn=get_on_fit_config_fn(),
             evaluate_fn=get_evaluate_fn(model),
             on_evaluate_config_fn=evaluate_config,
             initial_parameters = fl.common.ndarrays_to_parameters(model.get_weights()),
         )
 
-        # Start Flower server (SSL-enabled) for four rounds of federated learning
+        # Start Flower server of federated learning
         fl.server.start_server(
             server_address="127.0.0.1:8080",
             config=fl.server.ServerConfig(num_rounds=num_rounds),

@@ -65,16 +65,17 @@ class CifarClient(fl.client.NumPyClient):
         }
 
         # Save training weights in the created directory
-        if not (os.path.exists(f'./Client/Local-weights')):
-            os.mkdir(f"./Client/Local-weights")
+        if not (os.path.exists(f'../Client/Local-weights')):
+            print("code goes here")
+            os.mkdir(f"../Client/Local-weights")
 
-        if not (os.path.exists(f'./Client/Local-weights/Client-{self.client_id}')):
-            os.mkdir(f"./Client/Local-weights/Client-{self.client_id}")
+        if not (os.path.exists(f'../Client/Local-weights/Client-{self.client_id}')):
+            os.mkdir(f"../Client/Local-weights/Client-{self.client_id}")
 
-        if not (os.path.exists(f'.Client/Local-weights/Client-{self.client_id}/Session-{session}')):
-            os.mkdir(f"./Client/Local-weights/Client-{self.client_id}/Session-{session}")       
+        if not (os.path.exists(f'../Client/Local-weights/Client-{self.client_id}/Session-{session}')):
+            os.mkdir(f"../Client/Local-weights/Client-{self.client_id}/Session-{session}")       
 
-        filename = f'./Client/Local-weights/Client-{self.client_id}/Session-{session}/Round-{round}-training-weights.npy'
+        filename = f'../Client/Local-weights/Client-{self.client_id}/Session-{session}/Round-{round}-training-weights.npy'
         np.save(filename, parameters_prime)
         with open(filename,"rb") as f:
             bytes = f.read() # read entire file as bytes
@@ -103,16 +104,16 @@ class CifarClient(fl.client.NumPyClient):
         num_examples_test = len(self.x_test)
 
         # Create directory for global weights
-        if not (os.path.exists(f'./Client/Global-weights')):
-            os.mkdir(f"./Client/Global-weights")
-        if not (os.path.exists(f'./Client/Global-weights/Session-{session}')):
-            os.mkdir(f"./Client/Global-weights/Session-{session}")
-        # if not (os.path.exists(f'./Client/Global-weights/Client-{self.client_id}')):
-        #     os.mkdir(f"./Client/Global-weights/Client-{self.client_id}")
-        # if not (os.path.exists(f'./Client/Global-weights/Client-{self.client_id}/Session-{session}')):
-        #     os.mkdir(f"./Client/Global-weights/Client-{self.client_id}/Session-{session}")
+        if not (os.path.exists(f'../Client/Global-weights')):
+            os.mkdir(f"../Client/Global-weights")
+        if not (os.path.exists(f'../Client/Global-weights/Session-{session}')):
+            os.mkdir(f"../Client/Global-weights/Session-{session}")
+        # if not (os.path.exists(f'../Client/Global-weights/Client-{self.client_id}')):
+        #     os.mkdir(f"../Client/Global-weights/Client-{self.client_id}")
+        # if not (os.path.exists(f'../Client/Global-weights/Client-{self.client_id}/Session-{session}')):
+        #     os.mkdir(f"../Client/Global-weights/Client-{self.client_id}/Session-{session}")
 
-        filename = f'./Client/Global-weights/Session-{session}/Round-{round}-Global-weights.npy'
+        filename = f'../Client/Global-weights/Session-{session}/Round-{round}-Global-weights.npy'
         if not (os.path.exists(filename)):
             np.save(filename, global_rnd_model)
 

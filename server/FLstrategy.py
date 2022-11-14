@@ -14,7 +14,7 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
         fraction_evaluate=0.2,
         min_fit_clients=1,
         min_evaluate_clients=1,
-        min_available_clients=2,
+        min_available_clients=1,
         evaluate_fn=None,
         on_fit_config_fn=None,
         on_evaluate_config_fn=None,
@@ -81,58 +81,66 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
 
 
 
-        #     if not (os.path.exists(f'./Server/Global-weights')):
-        #         os.mkdir(f"./Server/Global-weights")
-        #     filename = f"./Server/Global-weights/round-{server_round}-weights.npy"
-        #     # Save weights
-        #     print(f"Saving round {server_round} weights...")
-        #     np.save(filename, aggregate_weights)
-        #     with open(filename,"rb") as f:
-        #         bytes = f.read() # read entire file as bytes
-        #         readable_hash = hashlib.sha256(bytes).hexdigest() # hash the file
-        #         print(readable_hash)
-        # return aggregate_weights
-
-
 def get_evaluate_fn(model):
-        """Return an evaluation function for server-side evaluation."""
+    """Return an evaluation function for server-side evaluation."""
+    # Load data and model here to avoid the overhead of doing it in `evaluate` itself
+    (x_train, y_train), _ = tf.keras.datasets.cifar10.load_data()
 
-        # Load data and model here to avoid the overhead of doing it in `evaluate` itself
-        (x_train, y_train), _ = tf.keras.datasets.cifar10.load_data()
+    # Use the last 5k training examples as a validation set
+    x_val, y_val = x_train[45000:50000], y_train[45000:50000]
 
-        # Use the last 5k training examples as a validation set
-        x_val, y_val = x_train[45000:50000], y_train[45000:50000]
+    # The `evaluate` function will be called after every round
+    def evaluate(
+        server_round: int,
+        parameters: fl.common.NDArrays,
+        config: Dict[str, fl.common.Scalar],
+    ) -> Optional[Tuple[float, Dict[str, fl.common.Scalar]]]:
+        model.set_weights(parameters)  # Update model with the latest parameters
+        loss, accuracy = model.evaluate(x_val, y_val)
+        return loss, {"accuracy": accuracy}
 
-        # The `evaluate` function will be called after every round
-        def evaluate(
-            server_round: int,
-            parameters: fl.common.NDArrays,
-            config: Dict[str, fl.common.Scalar],
-        ) -> Optional[Tuple[float, Dict[str, fl.common.Scalar]]]:
-            model.set_weights(parameters)  # Update model with the latest parameters
-            loss, accuracy = model.evaluate(x_val, y_val)
-            return loss, {"accuracy": accuracy}
-
-        return evaluate
+    return evaluate
 
 
-def fit_config(server_round: int):
+# def fit_config(server_round: int):
+#     """Return training configuration dict for each round.
+#     Keep batch size fixed at 32, perform two rounds of training with one
+#     local epoch, increase to two local epochs afterwards.
+#     """
+#     with open('config_training.json', 'r') as config_training:
+#         config=config_training.read()
+#         data = json.loads(config)
+#         session=data['session']
+
+#     config = {
+#         "batch_size": 32,
+#         "local_epochs": 1 if server_round < 2 else 2,
+#         "round": server_round,
+#         "session": session,
+#     }
+#     return config
+
+
+def get_on_fit_config_fn() -> Callable[[int], Dict[str, str]]:
     """Return training configuration dict for each round.
     Keep batch size fixed at 32, perform two rounds of training with one
     local epoch, increase to two local epochs afterwards.
     """
-    with open('config_training.json', 'r') as config_training:
-        config=config_training.read()
-        data = json.loads(config)
-        session=data['session']
 
-    config = {
-        "batch_size": 32,
-        "local_epochs": 1 if server_round < 2 else 2,
-        "round": server_round,
-        "session": session,
-    }
-    return config
+    def fit_config(server_round: int) -> Dict[str, str]:
+        with open('config_training.json', 'r') as config_training:
+            config=config_training.read()
+            data = json.loads(config)
+            session=data['session']
+        config = {
+            "batch_size": 32,
+            "local_epochs": 1 if server_round < 2 else 2,
+            "round": server_round,
+            "session": session,
+        }
+        return config
+        
+    return fit_config
 
 
 def evaluate_config(server_round: int):

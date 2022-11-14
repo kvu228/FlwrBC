@@ -28,7 +28,6 @@ contract Contribution{
                 balances[msg.sender] = balances[msg.sender] + (_dataSize/500);
                 clientAddresses.push(msg.sender);
                 rNos.push(_rNo);
-                
             }                
         }
 

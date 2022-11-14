@@ -5,7 +5,7 @@ import time
 from threading import Thread
 
 
-rpcServer = 'HTTP://172.25.112.1:7545'
+rpcServer = 'HTTP://172.26.64.1:7545'
 w3 = Web3(Web3.HTTPProvider(rpcServer))
 
 contributionSC = open('../blockchain/build/contracts/Contribution.json')
@@ -22,12 +22,11 @@ addressFederation = federationData['networks']['5777']['address']
 federation_contract_instance = w3.eth.contract(address=addressFederation, abi=federationAbi)
 
 
-
 class BlockchainService():
     def addWeight(self, _session: int, _round_num: int, _dataSize: int, _filePath: str, _fileHash: str):
         default_account = w3.eth.accounts[1]
         federation_contract_instance.functions.addWeight(_session, _round_num, _dataSize, _filePath, _fileHash).transact({'from': default_account})
-        result = federation_contract_instance.getWeight(_session,_round_num).call()
+        result = federation_contract_instance.functions.getWeight(_session,_round_num).call()
         return result
 
     def getAddress(self):
@@ -50,7 +49,6 @@ class BlockchainService():
                 contrib_dic[3]= rNo
                 contributions.append(contrib_dic)
         return contributions
-
 
 
 def handle_event(event):

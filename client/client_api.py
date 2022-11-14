@@ -71,7 +71,7 @@ def listen_and_participate(client_id:int,ipaddress:str ,port:int):
 
 @app.get("/getContributions")
 def getContributions():
-    contributions = BlockchainService.getContributions()
+    contributions = BlockchainService.getContributions(client_address)
     # Conver Python list to JSON
     json_compatible_item_data = jsonable_encoder(contributions)
     return JSONResponse(content=json_compatible_item_data)
@@ -79,4 +79,5 @@ def getContributions():
 
 @app.get("/")
 def testFAST():
-    return("Hello from client 1")
+
+    return("Hello from client add: ", client_address)
