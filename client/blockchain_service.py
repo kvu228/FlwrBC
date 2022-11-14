@@ -36,7 +36,7 @@ class BlockchainService():
         roundNumbers = contribution_contract_instance.functions.get_rNos().call()
         contributions = []
         for rNo in roundNumbers:
-            contribution = contribution_contract_instance.functions.get_contribution(client_address, rNo).call()
+            contribution = contribution_contract_instance.functions.getContribution(client_address, rNo).call()
             if contribution[1]>0:
                 contrib_dic={}
                 # Bool: Work status

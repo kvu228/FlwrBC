@@ -61,7 +61,8 @@ class CifarClient(fl.client.NumPyClient):
             "loss": history.history["loss"][0],
             "accuracy": history.history["accuracy"][0],
             "val_loss": history.history["val_loss"][0],
-            "val_accuracy": history.history["val_accuracy"][0],            
+            "val_accuracy": history.history["val_accuracy"][0],
+            "client_address": self.client_address,            
         }
 
         # Save training weights in the created directory

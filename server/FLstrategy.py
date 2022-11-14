@@ -70,10 +70,15 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
             # results: List[Tuple[ClientProxy, FitRes]]
             # FitRes: parameters: Parameters , num_examples: int , metrics: Optional[Metrics] = None
             print("data size = ", res[1].num_examples)
-            print ("client id = ",res[1].metrics["client_id"])
+            print("client id = ",res[1].metrics["client_id"])
+            print("client address = ",res[1].metrics['client_address'])
             
             if res[1].metrics['client_id'] not in self.contribution.keys():
-                self.contribution[res[1].metrics["client_id"]]={"data_size":res[1].num_examples ,"num_rounds_participated":1}
+                self.contribution[res[1].metrics["client_id"]]={
+                    "data_size":res[1].num_examples,
+                    "num_rounds_participated":1,
+                    "client_address":res[1].metrics['client_address']
+                }
             else:
                 self.contribution[res[1].metrics["client_id"]]["num_rounds_participated"]+=1
             

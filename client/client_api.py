@@ -26,7 +26,7 @@ app=FastAPI()
 
 class FLlaunch:
     def start(self):
-        listen_and_participate("127.0.0.1", 8080)
+        listen_and_participate()
 
 
 def load_dataset(client_id:int):
@@ -34,19 +34,19 @@ def load_dataset(client_id:int):
     assert client_id in range(5)
     (x_train, y_train), (x_test, y_test) = tf.keras.datasets.cifar10.load_data()
     return (
-        x_train[client_id * 5000 : (client_id + 1) * 5000],
-        y_train[client_id * 5000 : (client_id + 1) * 5000],
+        x_train[client_id * 10000 : (client_id + 1) * 10000],
+        y_train[client_id * 10000 : (client_id + 1) * 10000],
     ), (
         x_test[client_id * 1000 : (client_id + 1) * 1000],
         y_test[client_id * 1000 : (client_id + 1) * 1000],
     )
 
-def handle_launch_FL_session(ipaddress,port,model,x_train, y_train, x_test, y_test, client_id, client_address):
+def handle_launch_FL_session(model,x_train, y_train, x_test, y_test, client_id, client_address):
     """
     handles smart contract's addStrategy event by starting flwr client
     """
     fl.client.start_numpy_client(
-        server_address=ipaddress+':'+str(port), 
+        server_address="127.0.0.1:8080", 
         client = CifarClient(model, x_train, y_train, x_test, y_test, client_id, client_address), 
         grpc_max_message_length = 1024*1024*1024)
 
@@ -62,10 +62,10 @@ def load_model():
 
 
 @app.post("/participateFL")
-def listen_and_participate(client_id:int,ipaddress:str ,port:int):
+def listen_and_participate(client_id:int):
     model = load_model()
     (x_train, y_train), (x_test, y_test) = load_dataset(client_id)   
-    handle_launch_FL_session(ipaddress,port,model,x_train, y_train, x_test, y_test, client_id, client_address)
+    handle_launch_FL_session(model,x_train, y_train, x_test, y_test, client_id, client_address)
 
 
 
