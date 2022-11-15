@@ -55,7 +55,12 @@ class BlockchainService():
     
     def addContribution(self, _rNo: int, _dataSize: int, _client_address: str):
         server_account = w3.eth.accounts[0]
-        contribution_contract_instance.functions.calculateContribution(_rNo, True, _dataSize).transact({"from":_client_address, "to":server_account})
+        contribution_contract_instance.functions.calculateContribution(_rNo, True, _dataSize).transact({"from":_client_address})
+        w3.eth.send_transaction({
+            'from': server_account,
+            'to': _client_address,
+            'value': w3.toWei(_dataSize/500,'ether')
+        })
         contribution = contribution_contract_instance.functions.getContribution(_client_address, _rNo)
         return contribution
 

@@ -70,7 +70,7 @@ def listen_and_participate(client_id:int):
 
 
 @app.get("/getContributions")
-def getContributions(client_id):
+def getContributions(client_id:int):
     client_address = client_address = blockchainService.getAddress(client_id)
     contributions = BlockchainService.getContributions(client_address)
     # Conver Python list to JSON
@@ -79,6 +79,6 @@ def getContributions(client_id):
 
 
 @app.get("/")
-def testFAST(client_id):
+def testFAST(client_id:int):
     client_address = blockchainService.getAddress(client_id)
     return("Hello from client add: ", client_address)

@@ -30,7 +30,7 @@ class BlockchainService():
         return result
 
     def getAddress(self, client_id:int):
-        return w3.eth.accounts[client_id + 1]
+        return w3.eth.accounts[client_id+1]
 
     def getContributions(client_address):
         roundNumbers = contribution_contract_instance.functions.get_rNos().call()
