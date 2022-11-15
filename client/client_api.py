@@ -19,7 +19,6 @@ import argparse
 # client_id = args.partition
 
 blockchainService = BlockchainService()
-client_address = blockchainService.getAddress()
 
 app=FastAPI()
 
@@ -63,6 +62,7 @@ def load_model():
 
 @app.post("/participateFL")
 def listen_and_participate(client_id:int):
+    client_address = blockchainService.getAddress(client_id)
     model = load_model()
     (x_train, y_train), (x_test, y_test) = load_dataset(client_id)   
     handle_launch_FL_session(model,x_train, y_train, x_test, y_test, client_id, client_address)
@@ -70,7 +70,8 @@ def listen_and_participate(client_id:int):
 
 
 @app.get("/getContributions")
-def getContributions():
+def getContributions(client_id):
+    client_address = client_address = blockchainService.getAddress(client_id)
     contributions = BlockchainService.getContributions(client_address)
     # Conver Python list to JSON
     json_compatible_item_data = jsonable_encoder(contributions)
@@ -78,6 +79,6 @@ def getContributions():
 
 
 @app.get("/")
-def testFAST():
-
+def testFAST(client_id):
+    client_address = blockchainService.getAddress(client_id)
     return("Hello from client add: ", client_address)

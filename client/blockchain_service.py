@@ -23,14 +23,14 @@ federation_contract_instance = w3.eth.contract(address=addressFederation, abi=fe
 
 
 class BlockchainService():
-    def addWeight(self, _session: int, _round_num: int, _dataSize: int, _filePath: str, _fileHash: str):
-        default_account = w3.eth.accounts[1]
-        federation_contract_instance.functions.addWeight(_session, _round_num, _dataSize, _filePath, _fileHash).transact({'from': default_account})
+    def addWeight(self, _session: int, _round_num: int, _dataSize: int, _filePath: str, _fileHash: str, client_id: int):
+        client_address = w3.eth.accounts[client_id+1]
+        federation_contract_instance.functions.addWeight(_session, _round_num, _dataSize, _filePath, _fileHash).transact({'from': client_address})
         result = federation_contract_instance.functions.getWeight(_session,_round_num).call()
         return result
 
-    def getAddress(self):
-        return w3.eth.accounts[1]
+    def getAddress(self, client_id:int):
+        return w3.eth.accounts[client_id + 1]
 
     def getContributions(client_address):
         roundNumbers = contribution_contract_instance.functions.get_rNos().call()

@@ -76,34 +76,34 @@ def launch_fl_session(num_rounds:int, is_resume:bool):
             # load latest session's global model parameters
             initial_params = initial_parameters[0]
 
-        # Create strategy
-        strategy = SaveModelStrategy(
-            fraction_fit=0.3,
-            fraction_evaluate=0.2,
-            min_fit_clients=1,
-            min_evaluate_clients=1,
-            min_available_clients=1,
-            on_fit_config_fn=get_on_fit_config_fn(),
-            on_evaluate_config_fn=evaluate_config,
-            initial_parameters = initial_params,
+    # Create strategy
+    strategy = SaveModelStrategy(
+        fraction_fit=0.3,
+        fraction_evaluate=0.2,
+        min_fit_clients=2,
+        min_evaluate_clients=2,
+        min_available_clients=2,
+        on_fit_config_fn=get_on_fit_config_fn(),
+        on_evaluate_config_fn=evaluate_config,
+        initial_parameters = initial_params,
+    )
+
+    strat_added_BC = blockchainService.addStrategy(session,'FedAvg',num_rounds,strategy.__getattribute__('min_available_clients'))
+    print(strat_added_BC)
+
+    # Start Flower server
+    fl.server.start_server(
+        server_address="127.0.0.1:8080",
+        config=fl.server.ServerConfig(num_rounds=num_rounds),
+        strategy=strategy,
+    )
+
+    for client in strategy.contribution.keys():
+        blockchainService.addContribution(
+            strategy.contribution[client]['num_rounds_participated'],
+            strategy.contribution[client]['data_size'],
+            strategy.contribution[client]['client_address']
         )
-
-        strat_added_BC = blockchainService.addStrategy(session,'FedAvg',num_rounds,len(strategy.contribution.keys()))
-        print(strat_added_BC)
-
-        # Start Flower server
-        fl.server.start_server(
-            server_address="127.0.0.1:8080",
-            config=fl.server.ServerConfig(num_rounds=num_rounds),
-            strategy=strategy,
-        )
-
-        for client in strategy.contribution.keys():
-            blockchainService.addContribution(
-                strategy.contribution[client]['num_rounds_participated'],
-                strategy.contribution[client]['data_size'],
-                strategy.contribution[client]['client_address']
-            )
 
 
 @server.get('/')

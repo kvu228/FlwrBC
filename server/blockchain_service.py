@@ -48,19 +48,20 @@ class BlockchainService():
         return results
 
     def addStrategy(self, _session:int, _algoName: str, _numRounds: int, _numClients: int):
-        default_account = w3.eth.accounts[2]
-        federation_contract_instance.functions.addStartegy(_session, _algoName, _numRounds, _numClients).transact({'from': default_account})
+        server_account = w3.eth.accounts[0]
+        federation_contract_instance.functions.addStartegy(_session, _algoName, _numRounds, _numClients).transact({'from': server_account})
         strategy = federation_contract_instance.functions.getStrategy(_session).call()
         return strategy
     
     def addContribution(self, _rNo: int, _dataSize: int, _client_address: str):
-        contribution_contract_instance.functions.calculateContribution(_rNo, True, _dataSize).transact({"from":_client_address})
+        server_account = w3.eth.accounts[0]
+        contribution_contract_instance.functions.calculateContribution(_rNo, True, _dataSize).transact({"from":_client_address, "to":server_account})
         contribution = contribution_contract_instance.functions.getContribution(_client_address, _rNo)
         return contribution
 
     def addModel(self, _session:int, _round_num:int, _filePath:str, _fileHash:str):
-        default_account = w3.eth.accounts[2]
-        federation_contract_instance.functions.addModel(_session,_round_num,_filePath,_fileHash).transact({'from':default_account})
+        server_account = w3.eth.accounts[0]
+        federation_contract_instance.functions.addModel(_session,_round_num,_filePath,_fileHash).transact({'from':server_account})
         model = federation_contract_instance.functions.gerModel(_session,_round_num).call()
         return model
 

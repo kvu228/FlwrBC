@@ -50,17 +50,17 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
                 num_rounds=data['num_rounds']
                 session=data['session']
 
-            if not os.path.exists(f"./Server/fl_sessions/Session-{session}"):
-                os.makedirs(f"./Server/fl_sessions/Session-{session}")
+            if not os.path.exists(f"../Server/fl_sessions/Session-{session}"):
+                os.makedirs(f"../Server/fl_sessions/Session-{session}")
                 if  server_round < num_rounds:
-                    np.save(f"./Server/fl_sessions/Session-{session}/round-{server_round}-weights.npy", aggregated_weights)
+                    np.save(f"../Server/fl_sessions/Session-{session}/round-{server_round}-weights.npy", aggregated_weights)
                 elif server_round==num_rounds:
-                    np.save(f"./Server/fl_sessions/Session-{session}/global_session_model.npy", aggregated_weights)
+                    np.save(f"../Server/fl_sessions/Session-{session}/global_session_model.npy", aggregated_weights)
             else:
                 if  server_round < num_rounds:
-                    np.save(f"./Server/fl_sessions/Session-{session}/round-{server_round}-weights.npy", aggregated_weights)
+                    np.save(f"../Server/fl_sessions/Session-{session}/round-{server_round}-weights.npy", aggregated_weights)
                 elif server_round==num_rounds:
-                    np.save(f"./Server/fl_sessions/Session-{session}/global_session_model.npy", aggregated_weights)
+                    np.save(f"../Server/fl_sessions/Session-{session}/global_session_model.npy", aggregated_weights)
 
 
         # loop through the results and update contribution (pairs of key, value) where

@@ -83,7 +83,7 @@ class CifarClient(fl.client.NumPyClient):
             readable_hash = hashlib.sha256(bytes).hexdigest() #hash the file
             print(readable_hash)
 
-        bcResult = blockchainService.addWeight(_session=session,_round_num=round, _dataSize=num_examples_train, _filePath = filename, _fileHash = readable_hash)
+        bcResult = blockchainService.addWeight(_session=session,_round_num=round, _dataSize=num_examples_train, _filePath = filename, _fileHash = readable_hash, client_id=self.client_id)
         return parameters_prime, num_examples_train, results
 
     def evaluate(self, parameters, config):
