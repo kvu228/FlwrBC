@@ -61,27 +61,35 @@ def load_model():
     #     # Cifar10 is a dataset of 32x32 RGB color training images, labeled over 10 categories
     #     input_shape=(32, 32, 3), weights=None, classes=10
     # )
-    model = tf.keras.Sequential([
-        tf.keras.layers.Conv2D(32,3,kernel_initializer='he_normal', activation='relu',input_shape=(32,32,3)),
-        tf.keras.layers.BatchNormalization(),
 
-        tf.keras.layers.Dropout(0.2),
+    # Using CNN
+    # model = tf.keras.Sequential([
+    #     tf.keras.layers.Conv2D(32,3,kernel_initializer='he_normal', activation='relu',input_shape=(32,32,3)),
+    #     tf.keras.layers.BatchNormalization(),
 
-        tf.keras.layers.Conv2D(64,3,kernel_initializer='he_normal', activation='relu',strides=1),
-        tf.keras.layers.BatchNormalization(),
+    #     tf.keras.layers.Dropout(0.2),
 
-        tf.keras.layers.MaxPooling2D((2,2)),
-        tf.keras.layers.Conv2D(64,3,kernel_initializer='he_normal', activation='relu'),
-        tf.keras.layers.BatchNormalization(),
+    #     tf.keras.layers.Conv2D(64,3,kernel_initializer='he_normal', activation='relu',strides=1),
+    #     tf.keras.layers.BatchNormalization(),
 
-        tf.keras.layers.MaxPooling2D((4,4)),
-        tf.keras.layers.Dropout(0.2),
+    #     tf.keras.layers.MaxPooling2D((2,2)),
+    #     tf.keras.layers.Conv2D(64,3,kernel_initializer='he_normal', activation='relu'),
+    #     tf.keras.layers.BatchNormalization(),
 
-        tf.keras.layers.Flatten(),
-        tf.keras.layers.Dense(256,kernel_initializer='he_normal',activation='relu'),
-        tf.keras.layers.Dropout(0.1),
-        tf.keras.layers.Dense(10,kernel_initializer='glorot_uniform', activation='softmax')
-    ])
+    #     tf.keras.layers.MaxPooling2D((4,4)),
+    #     tf.keras.layers.Dropout(0.2),
+
+    #     tf.keras.layers.Flatten(),
+    #     tf.keras.layers.Dense(256,kernel_initializer='he_normal',activation='relu'),
+    #     tf.keras.layers.Dropout(0.1),
+    #     tf.keras.layers.Dense(10,kernel_initializer='glorot_uniform', activation='softmax')
+    # ])
+
+    # Load model architecture by json file
+    with open('model_architecture.json','r') as file:
+        json_data = file.read()
+    model_architecture = json.loads(json_data)
+    model = tf.keras.models.model_from_json(model_architecture)
     model.compile("adam", "sparse_categorical_crossentropy", metrics=["accuracy"])
     return model
 
@@ -132,7 +140,6 @@ def getResult():
         verify.plot_value_array(i, predictions[i], y_test)
         plt.tight_layout()
     plt.show()
-
 
     return()
 

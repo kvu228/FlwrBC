@@ -111,10 +111,6 @@ class CifarClient(fl.client.NumPyClient):
             os.mkdir(f"../Client/Global-weights")
         if not (os.path.exists(f'../Client/Global-weights/Session-{session}')):
             os.mkdir(f"../Client/Global-weights/Session-{session}")
-        # if not (os.path.exists(f'../Client/Global-weights/Client-{self.client_id}')):
-        #     os.mkdir(f"../Client/Global-weights/Client-{self.client_id}")
-        # if not (os.path.exists(f'../Client/Global-weights/Client-{self.client_id}/Session-{session}')):
-        #     os.mkdir(f"../Client/Global-weights/Client-{self.client_id}/Session-{session}")
 
         filename = f'../Client/Global-weights/Session-{session}/Round-{round}-Global-weights.npy'
         if not (os.path.exists(filename)):
