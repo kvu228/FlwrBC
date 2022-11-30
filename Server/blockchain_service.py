@@ -18,6 +18,7 @@ federationAbi = federationData['abi']
 addressFederation = federationData['networks']['5777']['address']
 federation_contract_instance = w3.eth.contract(address=addressFederation, abi=federationAbi)
 
+
 event_filter = contribution_contract_instance.events.contributeEvent.createFilter(fromBlock='latest')
 poll_interval = 2
 
@@ -56,7 +57,8 @@ class BlockchainService():
         w3.eth.send_transaction({
             'from': server_account,
             'to': _client_address,
-            'value': w3.toWei(_dataSize/500,'ether')
+            # 1000 datapoint = 1 eth
+            'value': w3.toWei(_dataSize/1000,'ether')
         })
         contribution = contribution_contract_instance.functions.getContribution(_client_address, _rNo)
         return contribution

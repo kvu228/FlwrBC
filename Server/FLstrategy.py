@@ -9,6 +9,16 @@ from flwr.common import Metrics
 import tensorflow as tf
 from blockchain_service import *
 
+
+from pinatapy import PinataPy
+
+with open('Api.json', 'r') as api:
+                keys=api.read()
+                data = json.loads(keys)
+                api_key=data['api_key']
+                secret_key=data['secret_key']
+pinata = PinataPy(api_key, secret_key)
+
 blockchainService = BlockchainService()
 
 class SaveModelStrategy(fl.server.strategy.FedAvg):
@@ -63,25 +73,29 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
                 if  server_round < num_rounds:
                     np.save(f"../Server/fl_sessions/Session-{session}/round-{server_round}-weights.npy", aggregated_weights)
                 elif server_round==num_rounds:
-                    np.save(f"../Server/fl_sessions/Session-{session}/global_session_model.npy", aggregated_weights)
-                    file_path = f'../Server/fl_sessions/Session-{session}/global_session_model.npy'
+                    np.save(f"../Server/fl_sessions/Session-{session}/global_session_{session}_model.npy", aggregated_weights)
+                    file_path = f'../Server/fl_sessions/Session-{session}/global_session_{session}_model.npy'
                     with open(file_path,"rb") as f:
                         bytes = f.read() # read entire file as bytes
                         readable_hash = hashlib.sha256(bytes).hexdigest() #hash the file
                         print(readable_hash)
+                        
                     global_model_BC = blockchainService.addModel(session,server_round,file_path,readable_hash)
+                    pinata.pin_file_to_ipfs(file_path,'/')
 
             else:
                 if  server_round < num_rounds:
                     np.save(f"../Server/fl_sessions/Session-{session}/round-{server_round}-weights.npy", aggregated_weights)
                 elif server_round==num_rounds:
-                    np.save(f"../Server/fl_sessions/Session-{session}/global_session_model.npy", aggregated_weights)
-                    file_path = f'../Server/fl_sessions/Session-{session}/global_session_model.npy'
+                    np.save(f"../Server/fl_sessions/Session-{session}/global_session_{session}_model.npy", aggregated_weights)
+                    file_path = f'../Server/fl_sessions/Session-{session}/global_session_{session}_model.npy'
                     with open(file_path,"rb") as f:
                         bytes = f.read() # read entire file as bytes
                         readable_hash = hashlib.sha256(bytes).hexdigest() #hash the file
                         print(readable_hash)
+
                     global_model_BC = blockchainService.addModel(session,server_round,file_path,readable_hash)
+                    pinata.pin_file_to_ipfs(file_path,'/')
 
 
         # loop through the results and update contribution (pairs of key, value) where
@@ -141,7 +155,7 @@ def get_on_fit_config_fn() -> Callable[[int], Dict[str, str]]:
             session=data['session']
         config = {
             "batch_size": 32,
-            "local_epochs": 5,
+            "local_epochs": 2,
             "round": server_round,
             "session": session,
         }

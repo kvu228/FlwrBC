@@ -92,7 +92,7 @@ def launch_fl_session(num_rounds:int, is_resume:bool):
         fraction_fit=0.3,
         fraction_evaluate=0.2,
         min_fit_clients=2,
-        min_evaluate_clients=2,
+        min_evaluate_clients=1,
         min_available_clients=2,
         on_fit_config_fn=get_on_fit_config_fn(),
         on_evaluate_config_fn=evaluate_config,
@@ -101,8 +101,8 @@ def launch_fl_session(num_rounds:int, is_resume:bool):
         initial_parameters = initial_params,
     )
 
+    # Add strategy to the blockchain
     strat_added_BC = blockchainService.addStrategy(session,'FedAvg',num_rounds,strategy.__getattribute__('min_available_clients'))
-    print(strat_added_BC)
 
     # Start Flower server
     fl.server.start_server(
