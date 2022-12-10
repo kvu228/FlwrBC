@@ -1,9 +1,20 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import json
+import requests
+
+from pinatapy import PinataPy
+
+with open('../api_key.json', 'r') as api:
+    keys=api.read()
+    data = json.loads(keys)
+    api_key=data['api_key']
+    secret_key=data['secret_key']
+pinata = PinataPy(api_key, secret_key)
 
 
-def load_last_global_model_weights(model,weights_directory): 
+def load_last_global_model_weights_from_localDB(model,weights_directory): 
     """
     loads the last received weights in the directory
     in which the global model weights are saved

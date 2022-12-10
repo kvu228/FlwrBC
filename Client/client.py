@@ -2,7 +2,7 @@ import argparse
 import os
 import hashlib
 import numpy as np
-
+import random
 import tensorflow as tf
 import flwr as fl
 
@@ -69,7 +69,6 @@ class CifarClient(fl.client.NumPyClient):
 
         # Save training weights in the created directory
         if not (os.path.exists(f'../Client/Local-weights')):
-            print("code goes here")
             os.mkdir(f"../Client/Local-weights")
 
         if not (os.path.exists(f'../Client/Local-weights/Client-{self.client_id}')):
@@ -84,6 +83,14 @@ class CifarClient(fl.client.NumPyClient):
             bytes = f.read() # read entire file as bytes
             readable_hash = hashlib.sha256(bytes).hexdigest() #hash the file
             print(readable_hash)
+
+        # Save plot
+        if not (os.path.exists(f'../Client/Plots')):
+            os.mkdir(f"../Client/Plots")
+        if not (os.path.exists(f'../Client/Plots/Session-{session}')):
+            os.mkdir(f"../Client/Plots/Session-{session}")
+        figname = f"../Client/Plots/Session-{session}/Client-{self.client_id}-Round-{round}.png"
+        plot_client_result(history,figname)
 
         bcResult = blockchainService.addWeight(_session=session,_round_num=round, _dataSize=num_examples_train, _filePath = filename, _fileHash = readable_hash, client_id=self.client_id)
         return parameters_prime, num_examples_train, results
@@ -107,15 +114,36 @@ class CifarClient(fl.client.NumPyClient):
         num_examples_test = len(self.x_test)
 
         # Create directory for global weights
-        if not (os.path.exists(f'../Client/Global-weights')):
-            os.mkdir(f"../Client/Global-weights")
-        if not (os.path.exists(f'../Client/Global-weights/Session-{session}')):
-            os.mkdir(f"../Client/Global-weights/Session-{session}")
+        try:
+            if not (os.path.exists(f'../Client/Global-weights')):
+                os.mkdir(f"../Client/Global-weights")
 
-        filename = f'../Client/Global-weights/Session-{session}/Round-{round}-Global-weights.npy'
-        if not (os.path.exists(filename)):
-            np.save(filename, global_rnd_model)
+            if not (os.path.exists(f'../Client/Global-weights/Session-{session}')):
+                os.mkdir(f"../Client/Global-weights/Session-{session}")
+
+            filename = f'../Client/Global-weights/Session-{session}/Round-{round}-Global-weights.npy'
+            if not (os.path.exists(filename)):
+                np.save(filename, global_rnd_model)
+        except NameError:
+            print(NameError)
 
         return loss, num_examples_test, {"accuracy": accuracy}
 
 
+
+def plot_client_result(model_history, fname):
+    acc = model_history.history['accuracy']
+    val_acc = model_history.history['val_accuracy']
+    loss = model_history.history['loss']
+    val_loss = model_history.history['val_loss']
+
+    epochs = range(len(acc))
+
+    plt.plot(epochs, acc, 'r', label='Training accuracy')
+    plt.plot(epochs, val_acc, 'b', label='Validation accuracy')
+    plt.title('Training and validation accuracy')
+    plt.xlabel('epochs')
+    plt.xticks(epochs)
+    plt.ylabel('accuracy')
+    plt.legend(loc=0)
+    plt.savefig(fname)

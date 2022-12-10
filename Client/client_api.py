@@ -57,11 +57,6 @@ def handle_launch_FL_session(model,x_train, y_train, x_test, y_test, client_id, 
 
 
 def load_model():
-    # model = tf.keras.applications.EfficientNetB0(
-    #     # Cifar10 is a dataset of 32x32 RGB color training images, labeled over 10 categories
-    #     input_shape=(32, 32, 3), weights=None, classes=10
-    # )
-
     # Using CNN
     # model = tf.keras.Sequential([
     #     tf.keras.layers.Conv2D(32,3,kernel_initializer='he_normal', activation='relu',input_shape=(32,32,3)),
@@ -117,10 +112,33 @@ def testFAST(client_id:int):
     client_address = blockchainService.getAddress(client_id)
     return("Hello from client add: ", client_address)
 
-@app.get("/getResult")
-def getResult():
+
+@app.get("/getResultBeforeFL")
+def getResultBeforeFL():
     model = load_model()
-    last_weights = verify.load_last_global_model_weights(model,f'./Global-weights')
+    (_,_),(x_test,y_test) = tf.keras.datasets.cifar10.load_data()
+    y_test = y_test.reshape(-1)
+    predictions = model.predict(x_test)
+
+    # Plot the first X test images, their predicted labels, and the true labels.
+    # Color correct predictions in blue and incorrect predictions in red.
+    num_rows = 5
+    num_cols = 3
+    num_images = num_rows*num_cols
+    plt.figure(figsize=(2*2*num_cols, 2*num_rows))
+    for i in range(num_images):
+        plt.subplot(num_rows, 2*num_cols, 2*i+1)
+        verify.plot_image(i, predictions[i], y_test, x_test)
+        plt.subplot(num_rows, 2*num_cols, 2*i+2)
+        verify.plot_value_array(i, predictions[i], y_test)
+        plt.tight_layout()
+    plt.show()
+
+
+@app.get("/getResultAfterFL")
+def getResultAfterFL():
+    model = load_model()
+    last_weights = verify.load_last_global_model_weights_from_localDB(model,f'./Global-weights')
     model.set_weights(last_weights)
     (_,_),(x_test,y_test) = tf.keras.datasets.cifar10.load_data()
     y_test = y_test.reshape(-1)
@@ -141,6 +159,5 @@ def getResult():
         plt.tight_layout()
     plt.show()
 
-    return()
 
     

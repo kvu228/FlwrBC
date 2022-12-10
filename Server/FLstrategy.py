@@ -12,11 +12,11 @@ from blockchain_service import *
 
 from pinatapy import PinataPy
 
-with open('Api.json', 'r') as api:
-                keys=api.read()
-                data = json.loads(keys)
-                api_key=data['api_key']
-                secret_key=data['secret_key']
+with open('../api_key.json', 'r') as api:
+    keys=api.read()
+    data = json.loads(keys)
+    api_key=data['api_key']
+    secret_key=data['secret_key']
 pinata = PinataPy(api_key, secret_key)
 
 blockchainService = BlockchainService()
@@ -81,7 +81,9 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
                         print(readable_hash)
                         
                     global_model_BC = blockchainService.addModel(session,server_round,file_path,readable_hash)
+                    file_path = f'../Server/fl_sessions/Session-{session}/global_session_{session}_model.npy'
                     pinata.pin_file_to_ipfs(file_path,'/')
+                    
 
             else:
                 if  server_round < num_rounds:
