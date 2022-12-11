@@ -15,6 +15,15 @@ server=FastAPI()
 blockchainService = BlockchainService()
 
 
+def load_model():
+    with open('model_architecture.json','r') as file:
+        json_data = file.read()
+    model_architecture = json.loads(json_data)
+    model = tf.keras.models.model_from_json(model_architecture)
+    model.compile("adam", "sparse_categorical_crossentropy", metrics=["accuracy"])
+    return model
+
+
 @server.get('/getContributions')
 def getContributions():
     contributions = blockchainService.getContributions()
@@ -46,6 +55,7 @@ def getModel():
 def launch_fl_session(num_rounds:int, is_resume:bool):
     """Start server and trigger update_strategy then connect to clients to perform fl session"""
     session = int(time.time())
+    model = load_model()
     with open('config_training.json', 'w+') as config_training:
         config=config_training.read()        
         try :
@@ -75,17 +85,19 @@ def launch_fl_session(num_rounds:int, is_resume:bool):
     for root, dirs, files in os.walk("../Server/fl_sessions", topdown = False):
         for name in dirs:
             if name.find('Session')!=-1:
-                sessions.append(name)
+                hist_session = name.strip('Session-')
+                sessions.append(hist_session)
                
 
     if (is_resume and len(sessions)!=0):
         # test if we will start training from the last session weights and
         # if we have at least a session directory
-        if os.path.exists(f'../Server/fl_sessions/{sessions[-1]}/global_session_model.npy'):
+        if os.path.exists(f'../Server/fl_sessions/Session-{sessions[-1]}/global_session_{sessions[-1]}_model.npy'):
             # if the latest session directory contains the global model parameters
-            initial_parameters = np.load(f"../Server/fl_sessions/{sessions[-1]}/global_session_model.npy", allow_pickle=True)
+            initial_parameters = np.load(f"../Server/fl_sessions/Session-{sessions[-1]}/global_session_{sessions[-1]}_model.npy", allow_pickle=True)
             # load latest session's global model parameters
             initial_params = initial_parameters[0]
+            # model.set_weights(initial_params)
 
     # Create strategy
     strategy = SaveModelStrategy(
@@ -94,6 +106,7 @@ def launch_fl_session(num_rounds:int, is_resume:bool):
         min_fit_clients=2,
         min_evaluate_clients=1,
         min_available_clients=2,
+        evaluate_fn=get_evaluate_fn(model),
         on_fit_config_fn=get_on_fit_config_fn(),
         on_evaluate_config_fn=evaluate_config,
         fit_metrics_aggregation_fn=weighted_average,

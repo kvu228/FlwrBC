@@ -59,6 +59,7 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
         failures,
     ) -> fl.common.Parameters:
         aggregated_weights = super().aggregate_fit(server_round, results, failures)
+
         if aggregated_weights is not None:
             # get num_rounds from config_training json file to be use to verify
             # if the current round is the first round
@@ -70,34 +71,21 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
 
             if not os.path.exists(f"../Server/fl_sessions/Session-{session}"):
                 os.makedirs(f"../Server/fl_sessions/Session-{session}")
-                if  server_round < num_rounds:
-                    np.save(f"../Server/fl_sessions/Session-{session}/round-{server_round}-weights.npy", aggregated_weights)
-                elif server_round==num_rounds:
-                    np.save(f"../Server/fl_sessions/Session-{session}/global_session_{session}_model.npy", aggregated_weights)
-                    file_path = f'../Server/fl_sessions/Session-{session}/global_session_{session}_model.npy'
-                    with open(file_path,"rb") as f:
-                        bytes = f.read() # read entire file as bytes
-                        readable_hash = hashlib.sha256(bytes).hexdigest() #hash the file
-                        print(readable_hash)
-                        
-                    global_model_BC = blockchainService.addModel(session,server_round,file_path,readable_hash)
-                    file_path = f'../Server/fl_sessions/Session-{session}/global_session_{session}_model.npy'
-                    pinata.pin_file_to_ipfs(file_path,'/')
-                    
+                
+            if  server_round < num_rounds:
+                np.save(f"../Server/fl_sessions/Session-{session}/round-{server_round}-weights.npy", aggregated_weights)
+            elif server_round==num_rounds:
+                np.save(f"../Server/fl_sessions/Session-{session}/global_session_{session}_model.npy", aggregated_weights)
+                file_path = f'../Server/fl_sessions/Session-{session}/global_session_{session}_model.npy'
+                with open(file_path,"rb") as f:
+                    bytes = f.read() # read entire file as bytes
+                    readable_hash = hashlib.sha256(bytes).hexdigest() #hash the file
+                    print(readable_hash)
+                global_model_BC = blockchainService.addModel(session,server_round,file_path,readable_hash)
+                # pinata.pin_file_to_ipfs(file_path,'/')
 
-            else:
-                if  server_round < num_rounds:
-                    np.save(f"../Server/fl_sessions/Session-{session}/round-{server_round}-weights.npy", aggregated_weights)
-                elif server_round==num_rounds:
-                    np.save(f"../Server/fl_sessions/Session-{session}/global_session_{session}_model.npy", aggregated_weights)
-                    file_path = f'../Server/fl_sessions/Session-{session}/global_session_{session}_model.npy'
-                    with open(file_path,"rb") as f:
-                        bytes = f.read() # read entire file as bytes
-                        readable_hash = hashlib.sha256(bytes).hexdigest() #hash the file
-                        print(readable_hash)
 
-                    global_model_BC = blockchainService.addModel(session,server_round,file_path,readable_hash)
-                    pinata.pin_file_to_ipfs(file_path,'/')
+            
 
 
         # loop through the results and update contribution (pairs of key, value) where
