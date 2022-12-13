@@ -52,9 +52,9 @@ class BlockchainService():
         strategy = federation_contract_instance.functions.getStrategy(_session).call()
         return strategy
     
-    def addContribution(self, _rNo: int, _dataSize: int, _client_address: str, _totalDataSize: int, _totalBudget: int):
+    def addContribution(self, _rNo: int, _dataSize: int, _client_address: str, _totalDataSize: int, _totalBudget: int, number_of_rounds: int):
         server_account = w3.eth.accounts[0]
-        payment = int(math.floor(_dataSize/_totalDataSize * _totalBudget))
+        payment = int(math.floor(_dataSize/_totalDataSize * _totalBudget/number_of_rounds * _rNo))
         contribution_contract_instance.functions.calculateContribution(_rNo, True, _dataSize, payment).transact({"from":_client_address})        
         w3.eth.send_transaction({
             'from': server_account,

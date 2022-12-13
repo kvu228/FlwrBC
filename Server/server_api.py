@@ -131,7 +131,8 @@ def launch_fl_session(num_rounds:int, is_resume:bool, budget: float):
                 _dataSize= strategy.contribution[client]['data_size'],
                 _client_address = strategy.contribution[client]['client_address'],
                 _totalDataSize = strategy.contribution['total_data_size'],
-                _totalBudget = budget
+                _totalBudget = budget,
+                number_of_rounds= num_rounds
             )
 
 

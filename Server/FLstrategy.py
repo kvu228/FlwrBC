@@ -49,7 +49,9 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
             on_evaluate_config_fn=on_evaluate_config_fn,
             initial_parameters=initial_parameters
         )
-        self.contribution={}
+        self.contribution={
+            'total_data_size': 0
+        }
 
 
     def aggregate_fit(
@@ -88,7 +90,7 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
         # loop through the results and update contribution (pairs of key, value) where
         # the key is the client id and the value is a dict of data size, sent size
         # and num_rounds_participated: updated value
-        total_data_size = 0
+        # total_data_size = 0
         for res in results:
             # results: List[Tuple[ClientProxy, FitRes]]
             # FitRes: parameters: Parameters , num_examples: int , metrics: Optional[Metrics] = None
@@ -102,11 +104,11 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
                     "num_rounds_participated":1,
                     "client_address":res[1].metrics['client_address']
                 }
-                total_data_size = total_data_size+res[1].num_examples
+                self.contribution['total_data_size'] = self.contribution['total_data_size']+res[1].num_examples
             else:
                 self.contribution[res[1].metrics["client_id"]]["num_rounds_participated"]+=1
-        if total_data_size !=0:
-            self.contribution['total_data_size'] = total_data_size
+        # if total_data_size !=0:
+        #     self.contribution['total_data_size'] = total_data_size
         return aggregated_weights
 
 
