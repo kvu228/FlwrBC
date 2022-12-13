@@ -14,7 +14,7 @@ contract Contribution{
     uint[] public rNos;
     event contributeEvent(uint _rNo, address _address);
 
-    function calculateContribution(uint _rNo, bool _finished, uint _dataSize)  public 
+    function calculateContribution(uint _rNo, bool _finished, uint _dataSize, uint _payment)  public 
     {
         require(
             (dataContributions[msg.sender][_rNo].finished == true || dataContributions[msg.sender][_rNo].finished == false)
@@ -25,7 +25,7 @@ contract Contribution{
         if (_finished == true) {
             if(_dataSize > 500){
                 dataContributions[msg.sender][_rNo] = Work(_finished, _dataSize);
-                balances[msg.sender] = balances[msg.sender] + (_dataSize/500);
+                balances[msg.sender] = balances[msg.sender] + _payment;
                 clientAddresses.push(msg.sender);
                 rNos.push(_rNo);
             }

@@ -85,12 +85,10 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
                 # pinata.pin_file_to_ipfs(file_path,'/')
 
 
-            
-
-
         # loop through the results and update contribution (pairs of key, value) where
         # the key is the client id and the value is a dict of data size, sent size
         # and num_rounds_participated: updated value
+        total_data_size = 0
         for res in results:
             # results: List[Tuple[ClientProxy, FitRes]]
             # FitRes: parameters: Parameters , num_examples: int , metrics: Optional[Metrics] = None
@@ -104,9 +102,11 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
                     "num_rounds_participated":1,
                     "client_address":res[1].metrics['client_address']
                 }
+                total_data_size = total_data_size+res[1].num_examples
             else:
                 self.contribution[res[1].metrics["client_id"]]["num_rounds_participated"]+=1
-            
+        if total_data_size !=0:
+            self.contribution['total_data_size'] = total_data_size
         return aggregated_weights
 
 
@@ -135,7 +135,7 @@ def get_evaluate_fn(model):
 
 def get_on_fit_config_fn() -> Callable[[int], Dict[str, str]]:
     """Return training configuration dict for each round.
-    Keep batch size fixed at 32, 10 local epochs.
+    Keep batch size fixed at 32, 2 local epochs.
     """
 
     def fit_config(server_round: int) -> Dict[str, str]:

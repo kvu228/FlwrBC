@@ -1,5 +1,6 @@
 from web3 import Web3
 import json
+import math
 
 
 rpcServer = 'HTTP://127.0.0.1:8545'
@@ -51,14 +52,14 @@ class BlockchainService():
         strategy = federation_contract_instance.functions.getStrategy(_session).call()
         return strategy
     
-    def addContribution(self, _rNo: int, _dataSize: int, _client_address: str):
+    def addContribution(self, _rNo: int, _dataSize: int, _client_address: str, _totalDataSize: int, _totalBudget: int):
         server_account = w3.eth.accounts[0]
-        contribution_contract_instance.functions.calculateContribution(_rNo, True, _dataSize).transact({"from":_client_address})
+        payment = int(math.floor(_dataSize/_totalDataSize * _totalBudget))
+        contribution_contract_instance.functions.calculateContribution(_rNo, True, _dataSize, payment).transact({"from":_client_address})        
         w3.eth.send_transaction({
             'from': server_account,
             'to': _client_address,
-            # 1000 datapoint = 1 eth
-            'value': w3.toWei(_dataSize/1000,'ether')
+            'value': w3.toWei(payment,'ether')
         })
         contribution = contribution_contract_instance.functions.getContribution(_client_address, _rNo)
         return contribution

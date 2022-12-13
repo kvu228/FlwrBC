@@ -52,7 +52,7 @@ def getModel():
     return JSONResponse(content=json_compatible_item_data)
 
 @server.post("/launchFL")
-def launch_fl_session(num_rounds:int, is_resume:bool):
+def launch_fl_session(num_rounds:int, is_resume:bool, budget: float):
     """Start server and trigger update_strategy then connect to clients to perform fl session"""
     session = int(time.time())
     model = load_model()
@@ -125,11 +125,14 @@ def launch_fl_session(num_rounds:int, is_resume:bool):
     )
 
     for client in strategy.contribution.keys():
-        blockchainService.addContribution(
-            strategy.contribution[client]['num_rounds_participated'],
-            strategy.contribution[client]['data_size'],
-            strategy.contribution[client]['client_address']
-        )
+        if client != 'total_data_size':
+            blockchainService.addContribution(
+                _rNo = strategy.contribution[client]['num_rounds_participated'],
+                _dataSize= strategy.contribution[client]['data_size'],
+                _client_address = strategy.contribution[client]['client_address'],
+                _totalDataSize = strategy.contribution['total_data_size'],
+                _totalBudget = budget
+            )
 
 
 @server.get('/')

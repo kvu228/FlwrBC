@@ -8206,14 +8206,14 @@
     "absolutePath": "project:/contracts/Federation.sol",
     "exportedSymbols": {
       "Federation": [
-        510
+        509
       ]
     },
-    "id": 511,
+    "id": 510,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 211,
+        "id": 210,
         "literals": [
           "solidity",
           ">=",
@@ -8233,9 +8233,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 510,
+        "id": 509,
         "linearizedBaseContracts": [
-          510
+          509
         ],
         "name": "Federation",
         "nameLocation": "44:10:1",
@@ -8243,16 +8243,16 @@
         "nodes": [
           {
             "canonicalName": "Federation.Weight",
-            "id": 218,
+            "id": 217,
             "members": [
               {
                 "constant": false,
-                "id": 213,
+                "id": 212,
                 "mutability": "mutable",
                 "name": "dataSize",
                 "nameLocation": "90:8:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 218,
+                "scope": 217,
                 "src": "85:13:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -8261,7 +8261,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 212,
+                  "id": 211,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "85:4:1",
@@ -8274,12 +8274,12 @@
               },
               {
                 "constant": false,
-                "id": 215,
+                "id": 214,
                 "mutability": "mutable",
                 "name": "filePath",
                 "nameLocation": "116:8:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 218,
+                "scope": 217,
                 "src": "109:15:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -8288,7 +8288,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 214,
+                  "id": 213,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "109:6:1",
@@ -8301,12 +8301,12 @@
               },
               {
                 "constant": false,
-                "id": 217,
+                "id": 216,
                 "mutability": "mutable",
                 "name": "fileHash",
                 "nameLocation": "142:8:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 218,
+                "scope": 217,
                 "src": "135:15:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -8315,7 +8315,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 216,
+                  "id": 215,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "135:6:1",
@@ -8330,22 +8330,22 @@
             "name": "Weight",
             "nameLocation": "68:6:1",
             "nodeType": "StructDefinition",
-            "scope": 510,
+            "scope": 509,
             "src": "61:97:1",
             "visibility": "public"
           },
           {
             "canonicalName": "Federation.GlobalModel",
-            "id": 223,
+            "id": 222,
             "members": [
               {
                 "constant": false,
-                "id": 220,
+                "id": 219,
                 "mutability": "mutable",
                 "name": "filePath",
                 "nameLocation": "202:8:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 223,
+                "scope": 222,
                 "src": "195:15:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -8354,7 +8354,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 219,
+                  "id": 218,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "195:6:1",
@@ -8367,12 +8367,12 @@
               },
               {
                 "constant": false,
-                "id": 222,
+                "id": 221,
                 "mutability": "mutable",
                 "name": "fileHash",
                 "nameLocation": "228:8:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 223,
+                "scope": 222,
                 "src": "221:15:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -8381,7 +8381,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 221,
+                  "id": 220,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "221:6:1",
@@ -8396,22 +8396,22 @@
             "name": "GlobalModel",
             "nameLocation": "173:11:1",
             "nodeType": "StructDefinition",
-            "scope": 510,
+            "scope": 509,
             "src": "166:78:1",
             "visibility": "public"
           },
           {
             "canonicalName": "Federation.Strategy",
-            "id": 230,
+            "id": 229,
             "members": [
               {
                 "constant": false,
-                "id": 225,
+                "id": 224,
                 "mutability": "mutable",
                 "name": "algoName",
                 "nameLocation": "285:8:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 230,
+                "scope": 229,
                 "src": "278:15:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -8420,7 +8420,7 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 224,
+                  "id": 223,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
                   "src": "278:6:1",
@@ -8433,12 +8433,12 @@
               },
               {
                 "constant": false,
-                "id": 227,
+                "id": 226,
                 "mutability": "mutable",
                 "name": "numRounds",
                 "nameLocation": "309:9:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 230,
+                "scope": 229,
                 "src": "304:14:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -8447,7 +8447,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 226,
+                  "id": 225,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "304:4:1",
@@ -8460,12 +8460,12 @@
               },
               {
                 "constant": false,
-                "id": 229,
+                "id": 228,
                 "mutability": "mutable",
                 "name": "numClients",
                 "nameLocation": "334:10:1",
                 "nodeType": "VariableDeclaration",
-                "scope": 230,
+                "scope": 229,
                 "src": "329:15:1",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -8474,7 +8474,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 228,
+                  "id": 227,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "329:4:1",
@@ -8489,29 +8489,29 @@
             "name": "Strategy",
             "nameLocation": "259:8:1",
             "nodeType": "StructDefinition",
-            "scope": 510,
+            "scope": 509,
             "src": "252:100:1",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 239,
+            "id": 238,
             "mutability": "mutable",
             "name": "weights",
             "nameLocation": "422:7:1",
             "nodeType": "VariableDeclaration",
-            "scope": 510,
+            "scope": 509,
             "src": "360:69:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$_$",
               "typeString": "mapping(uint256 => mapping(uint256 => mapping(address => struct Federation.Weight)))"
             },
             "typeName": {
-              "id": 238,
+              "id": 237,
               "keyType": {
-                "id": 231,
+                "id": 230,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "369:4:1",
@@ -8523,13 +8523,13 @@
               "nodeType": "Mapping",
               "src": "360:61:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$_$",
                 "typeString": "mapping(uint256 => mapping(uint256 => mapping(address => struct Federation.Weight)))"
               },
               "valueType": {
-                "id": 237,
+                "id": 236,
                 "keyType": {
-                  "id": 232,
+                  "id": 231,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "385:4:1",
@@ -8541,13 +8541,13 @@
                 "nodeType": "Mapping",
                 "src": "377:43:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$",
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$",
                   "typeString": "mapping(uint256 => mapping(address => struct Federation.Weight))"
                 },
                 "valueType": {
-                  "id": 236,
+                  "id": 235,
                   "keyType": {
-                    "id": 233,
+                    "id": 232,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "401:7:1",
@@ -8559,26 +8559,26 @@
                   "nodeType": "Mapping",
                   "src": "393:26:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$",
+                    "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$",
                     "typeString": "mapping(address => struct Federation.Weight)"
                   },
                   "valueType": {
-                    "id": 235,
+                    "id": 234,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 234,
+                      "id": 233,
                       "name": "Weight",
                       "nameLocations": [
                         "412:6:1"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 218,
+                      "referencedDeclaration": 217,
                       "src": "412:6:1"
                     },
-                    "referencedDeclaration": 218,
+                    "referencedDeclaration": 217,
                     "src": "412:6:1",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Weight_$218_storage_ptr",
+                      "typeIdentifier": "t_struct$_Weight_$217_storage_ptr",
                       "typeString": "struct Federation.Weight"
                     }
                   }
@@ -8589,23 +8589,23 @@
           },
           {
             "constant": false,
-            "id": 246,
+            "id": 245,
             "mutability": "mutable",
             "name": "models",
             "nameLocation": "483:6:1",
             "nodeType": "VariableDeclaration",
-            "scope": 510,
+            "scope": 509,
             "src": "436:53:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_struct$_GlobalModel_$223_storage_$_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_struct$_GlobalModel_$222_storage_$_$",
               "typeString": "mapping(uint256 => mapping(uint256 => struct Federation.GlobalModel))"
             },
             "typeName": {
-              "id": 245,
+              "id": 244,
               "keyType": {
-                "id": 240,
+                "id": 239,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "445:4:1",
@@ -8617,13 +8617,13 @@
               "nodeType": "Mapping",
               "src": "436:46:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_struct$_GlobalModel_$223_storage_$_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_struct$_GlobalModel_$222_storage_$_$",
                 "typeString": "mapping(uint256 => mapping(uint256 => struct Federation.GlobalModel))"
               },
               "valueType": {
-                "id": 244,
+                "id": 243,
                 "keyType": {
-                  "id": 241,
+                  "id": 240,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "461:4:1",
@@ -8635,26 +8635,26 @@
                 "nodeType": "Mapping",
                 "src": "453:28:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_GlobalModel_$223_storage_$",
+                  "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_GlobalModel_$222_storage_$",
                   "typeString": "mapping(uint256 => struct Federation.GlobalModel)"
                 },
                 "valueType": {
-                  "id": 243,
+                  "id": 242,
                   "nodeType": "UserDefinedTypeName",
                   "pathNode": {
-                    "id": 242,
+                    "id": 241,
                     "name": "GlobalModel",
                     "nameLocations": [
                       "469:11:1"
                     ],
                     "nodeType": "IdentifierPath",
-                    "referencedDeclaration": 223,
+                    "referencedDeclaration": 222,
                     "src": "469:11:1"
                   },
-                  "referencedDeclaration": 223,
+                  "referencedDeclaration": 222,
                   "src": "469:11:1",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_GlobalModel_$223_storage_ptr",
+                    "typeIdentifier": "t_struct$_GlobalModel_$222_storage_ptr",
                     "typeString": "struct Federation.GlobalModel"
                   }
                 }
@@ -8664,23 +8664,23 @@
           },
           {
             "constant": false,
-            "id": 251,
+            "id": 250,
             "mutability": "mutable",
             "name": "strategies",
             "nameLocation": "523:10:1",
             "nodeType": "VariableDeclaration",
-            "scope": 510,
+            "scope": 509,
             "src": "496:37:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$230_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$229_storage_$",
               "typeString": "mapping(uint256 => struct Federation.Strategy)"
             },
             "typeName": {
-              "id": 250,
+              "id": 249,
               "keyType": {
-                "id": 247,
+                "id": 246,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "505:4:1",
@@ -8692,26 +8692,26 @@
               "nodeType": "Mapping",
               "src": "496:26:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$230_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$229_storage_$",
                 "typeString": "mapping(uint256 => struct Federation.Strategy)"
               },
               "valueType": {
-                "id": 249,
+                "id": 248,
                 "nodeType": "UserDefinedTypeName",
                 "pathNode": {
-                  "id": 248,
+                  "id": 247,
                   "name": "Strategy",
                   "nameLocations": [
                     "513:8:1"
                   ],
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 230,
+                  "referencedDeclaration": 229,
                   "src": "513:8:1"
                 },
-                "referencedDeclaration": 230,
+                "referencedDeclaration": 229,
                 "src": "513:8:1",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_Strategy_$230_storage_ptr",
+                  "typeIdentifier": "t_struct$_Strategy_$229_storage_ptr",
                   "typeString": "struct Federation.Strategy"
                 }
               }
@@ -8721,23 +8721,23 @@
           {
             "anonymous": false,
             "eventSelector": "ae06fef34b43bd11be381b3a74f36488ed8a0e8e9070a061d4df07208d7428a2",
-            "id": 259,
+            "id": 258,
             "name": "addStrategyEvent",
             "nameLocation": "546:16:1",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 258,
+              "id": 257,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 253,
+                  "id": 252,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_algoName",
                   "nameLocation": "570:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 259,
+                  "scope": 258,
                   "src": "563:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -8746,7 +8746,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 252,
+                    "id": 251,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "563:6:1",
@@ -8759,13 +8759,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 255,
+                  "id": 254,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_num_client",
                   "nameLocation": "586:11:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 259,
+                  "scope": 258,
                   "src": "581:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -8774,7 +8774,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 254,
+                    "id": 253,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "581:4:1",
@@ -8787,13 +8787,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 257,
+                  "id": 256,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_num_round",
                   "nameLocation": "604:10:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 259,
+                  "scope": 258,
                   "src": "599:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -8802,7 +8802,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 256,
+                    "id": 255,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "599:4:1",
@@ -8820,13 +8820,13 @@
           },
           {
             "body": {
-              "id": 308,
+              "id": 307,
               "nodeType": "Block",
               "src": "774:227:1",
               "statements": [
                 {
                   "expression": {
-                    "id": 282,
+                    "id": 281,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8836,24 +8836,24 @@
                         "baseExpression": {
                           "baseExpression": {
                             "baseExpression": {
-                              "id": 272,
+                              "id": 271,
                               "name": "weights",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 239,
+                              "referencedDeclaration": 238,
                               "src": "785:7:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$_$",
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$_$",
                                 "typeString": "mapping(uint256 => mapping(uint256 => mapping(address => struct Federation.Weight storage ref)))"
                               }
                             },
-                            "id": 277,
+                            "id": 276,
                             "indexExpression": {
-                              "id": 273,
+                              "id": 272,
                               "name": "_session",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 261,
+                              "referencedDeclaration": 260,
                               "src": "793:8:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -8867,17 +8867,17 @@
                             "nodeType": "IndexAccess",
                             "src": "785:17:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$",
                               "typeString": "mapping(uint256 => mapping(address => struct Federation.Weight storage ref))"
                             }
                           },
-                          "id": 278,
+                          "id": 277,
                           "indexExpression": {
-                            "id": 274,
+                            "id": 273,
                             "name": "_round_num",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 263,
+                            "referencedDeclaration": 262,
                             "src": "803:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -8891,14 +8891,14 @@
                           "nodeType": "IndexAccess",
                           "src": "785:29:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$",
                             "typeString": "mapping(address => struct Federation.Weight storage ref)"
                           }
                         },
-                        "id": 279,
+                        "id": 278,
                         "indexExpression": {
                           "expression": {
-                            "id": 275,
+                            "id": 274,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -8909,7 +8909,7 @@
                               "typeString": "msg"
                             }
                           },
-                          "id": 276,
+                          "id": 275,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -8930,11 +8930,11 @@
                         "nodeType": "IndexAccess",
                         "src": "785:41:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Weight_$218_storage",
+                          "typeIdentifier": "t_struct$_Weight_$217_storage",
                           "typeString": "struct Federation.Weight storage ref"
                         }
                       },
-                      "id": 280,
+                      "id": 279,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -8942,7 +8942,7 @@
                       "memberLocation": "827:8:1",
                       "memberName": "dataSize",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 213,
+                      "referencedDeclaration": 212,
                       "src": "785:50:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -8952,11 +8952,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 281,
+                      "id": 280,
                       "name": "_dataSize",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 265,
+                      "referencedDeclaration": 264,
                       "src": "838:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -8969,13 +8969,13 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 283,
+                  "id": 282,
                   "nodeType": "ExpressionStatement",
                   "src": "785:62:1"
                 },
                 {
                   "expression": {
-                    "id": 294,
+                    "id": 293,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -8985,24 +8985,24 @@
                         "baseExpression": {
                           "baseExpression": {
                             "baseExpression": {
-                              "id": 284,
+                              "id": 283,
                               "name": "weights",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 239,
+                              "referencedDeclaration": 238,
                               "src": "858:7:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$_$",
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$_$",
                                 "typeString": "mapping(uint256 => mapping(uint256 => mapping(address => struct Federation.Weight storage ref)))"
                               }
                             },
-                            "id": 289,
+                            "id": 288,
                             "indexExpression": {
-                              "id": 285,
+                              "id": 284,
                               "name": "_session",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 261,
+                              "referencedDeclaration": 260,
                               "src": "866:8:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -9016,17 +9016,17 @@
                             "nodeType": "IndexAccess",
                             "src": "858:17:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$",
                               "typeString": "mapping(uint256 => mapping(address => struct Federation.Weight storage ref))"
                             }
                           },
-                          "id": 290,
+                          "id": 289,
                           "indexExpression": {
-                            "id": 286,
+                            "id": 285,
                             "name": "_round_num",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 263,
+                            "referencedDeclaration": 262,
                             "src": "876:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -9040,14 +9040,14 @@
                           "nodeType": "IndexAccess",
                           "src": "858:29:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$",
                             "typeString": "mapping(address => struct Federation.Weight storage ref)"
                           }
                         },
-                        "id": 291,
+                        "id": 290,
                         "indexExpression": {
                           "expression": {
-                            "id": 287,
+                            "id": 286,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -9058,7 +9058,7 @@
                               "typeString": "msg"
                             }
                           },
-                          "id": 288,
+                          "id": 287,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -9079,11 +9079,11 @@
                         "nodeType": "IndexAccess",
                         "src": "858:41:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Weight_$218_storage",
+                          "typeIdentifier": "t_struct$_Weight_$217_storage",
                           "typeString": "struct Federation.Weight storage ref"
                         }
                       },
-                      "id": 292,
+                      "id": 291,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -9091,7 +9091,7 @@
                       "memberLocation": "900:8:1",
                       "memberName": "filePath",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 215,
+                      "referencedDeclaration": 214,
                       "src": "858:50:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -9101,11 +9101,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 293,
+                      "id": 292,
                       "name": "_filePath",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 267,
+                      "referencedDeclaration": 266,
                       "src": "911:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -9118,13 +9118,13 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 295,
+                  "id": 294,
                   "nodeType": "ExpressionStatement",
                   "src": "858:62:1"
                 },
                 {
                   "expression": {
-                    "id": 306,
+                    "id": 305,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -9134,24 +9134,24 @@
                         "baseExpression": {
                           "baseExpression": {
                             "baseExpression": {
-                              "id": 296,
+                              "id": 295,
                               "name": "weights",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 239,
+                              "referencedDeclaration": 238,
                               "src": "931:7:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$_$",
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$_$",
                                 "typeString": "mapping(uint256 => mapping(uint256 => mapping(address => struct Federation.Weight storage ref)))"
                               }
                             },
-                            "id": 301,
+                            "id": 300,
                             "indexExpression": {
-                              "id": 297,
+                              "id": 296,
                               "name": "_session",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 261,
+                              "referencedDeclaration": 260,
                               "src": "939:8:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -9165,17 +9165,17 @@
                             "nodeType": "IndexAccess",
                             "src": "931:17:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$",
                               "typeString": "mapping(uint256 => mapping(address => struct Federation.Weight storage ref))"
                             }
                           },
-                          "id": 302,
+                          "id": 301,
                           "indexExpression": {
-                            "id": 298,
+                            "id": 297,
                             "name": "_round_num",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 263,
+                            "referencedDeclaration": 262,
                             "src": "949:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -9189,14 +9189,14 @@
                           "nodeType": "IndexAccess",
                           "src": "931:29:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$",
                             "typeString": "mapping(address => struct Federation.Weight storage ref)"
                           }
                         },
-                        "id": 303,
+                        "id": 302,
                         "indexExpression": {
                           "expression": {
-                            "id": 299,
+                            "id": 298,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -9207,7 +9207,7 @@
                               "typeString": "msg"
                             }
                           },
-                          "id": 300,
+                          "id": 299,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -9228,11 +9228,11 @@
                         "nodeType": "IndexAccess",
                         "src": "931:41:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Weight_$218_storage",
+                          "typeIdentifier": "t_struct$_Weight_$217_storage",
                           "typeString": "struct Federation.Weight storage ref"
                         }
                       },
-                      "id": 304,
+                      "id": 303,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -9240,7 +9240,7 @@
                       "memberLocation": "973:8:1",
                       "memberName": "fileHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 217,
+                      "referencedDeclaration": 216,
                       "src": "931:50:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -9250,11 +9250,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 305,
+                      "id": 304,
                       "name": "_fileHash",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 269,
+                      "referencedDeclaration": 268,
                       "src": "984:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -9267,14 +9267,14 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 307,
+                  "id": 306,
                   "nodeType": "ExpressionStatement",
                   "src": "931:62:1"
                 }
               ]
             },
             "functionSelector": "f8cc55b3",
-            "id": 309,
+            "id": 308,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -9282,17 +9282,17 @@
             "nameLocation": "659:9:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 270,
+              "id": 269,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 261,
+                  "id": 260,
                   "mutability": "mutable",
                   "name": "_session",
                   "nameLocation": "674:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 309,
+                  "scope": 308,
                   "src": "669:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -9301,7 +9301,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 260,
+                    "id": 259,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "669:4:1",
@@ -9314,12 +9314,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 263,
+                  "id": 262,
                   "mutability": "mutable",
                   "name": "_round_num",
                   "nameLocation": "689:10:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 309,
+                  "scope": 308,
                   "src": "684:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -9328,7 +9328,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 262,
+                    "id": 261,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "684:4:1",
@@ -9341,12 +9341,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 265,
+                  "id": 264,
                   "mutability": "mutable",
                   "name": "_dataSize",
                   "nameLocation": "706:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 309,
+                  "scope": 308,
                   "src": "701:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -9355,7 +9355,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 264,
+                    "id": 263,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "701:4:1",
@@ -9368,12 +9368,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 267,
+                  "id": 266,
                   "mutability": "mutable",
                   "name": "_filePath",
                   "nameLocation": "731:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 309,
+                  "scope": 308,
                   "src": "717:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -9382,7 +9382,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 266,
+                    "id": 265,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "717:6:1",
@@ -9395,12 +9395,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 269,
+                  "id": 268,
                   "mutability": "mutable",
                   "name": "_fileHash",
                   "nameLocation": "756:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 309,
+                  "scope": 308,
                   "src": "742:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -9409,7 +9409,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 268,
+                    "id": 267,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "742:6:1",
@@ -9424,12 +9424,12 @@
               "src": "668:98:1"
             },
             "returnParameters": {
-              "id": 271,
+              "id": 270,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "774:0:1"
             },
-            "scope": 510,
+            "scope": 509,
             "src": "650:351:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -9437,23 +9437,23 @@
           },
           {
             "body": {
-              "id": 363,
+              "id": 362,
               "nodeType": "Block",
               "src": "1146:275:1",
               "statements": [
                 {
                   "expression": {
-                    "id": 332,
+                    "id": 331,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 322,
+                      "id": 321,
                       "name": "dataSize_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 316,
+                      "referencedDeclaration": 315,
                       "src": "1157:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -9467,24 +9467,24 @@
                         "baseExpression": {
                           "baseExpression": {
                             "baseExpression": {
-                              "id": 323,
+                              "id": 322,
                               "name": "weights",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 239,
+                              "referencedDeclaration": 238,
                               "src": "1169:7:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$_$",
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$_$",
                                 "typeString": "mapping(uint256 => mapping(uint256 => mapping(address => struct Federation.Weight storage ref)))"
                               }
                             },
-                            "id": 325,
+                            "id": 324,
                             "indexExpression": {
-                              "id": 324,
+                              "id": 323,
                               "name": "_session",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 311,
+                              "referencedDeclaration": 310,
                               "src": "1177:8:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -9498,17 +9498,17 @@
                             "nodeType": "IndexAccess",
                             "src": "1169:17:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$",
                               "typeString": "mapping(uint256 => mapping(address => struct Federation.Weight storage ref))"
                             }
                           },
-                          "id": 327,
+                          "id": 326,
                           "indexExpression": {
-                            "id": 326,
+                            "id": 325,
                             "name": "_round_num",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 313,
+                            "referencedDeclaration": 312,
                             "src": "1187:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -9522,14 +9522,14 @@
                           "nodeType": "IndexAccess",
                           "src": "1169:29:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$",
                             "typeString": "mapping(address => struct Federation.Weight storage ref)"
                           }
                         },
-                        "id": 330,
+                        "id": 329,
                         "indexExpression": {
                           "expression": {
-                            "id": 328,
+                            "id": 327,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -9540,7 +9540,7 @@
                               "typeString": "msg"
                             }
                           },
-                          "id": 329,
+                          "id": 328,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -9561,11 +9561,11 @@
                         "nodeType": "IndexAccess",
                         "src": "1169:41:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Weight_$218_storage",
+                          "typeIdentifier": "t_struct$_Weight_$217_storage",
                           "typeString": "struct Federation.Weight storage ref"
                         }
                       },
-                      "id": 331,
+                      "id": 330,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -9573,7 +9573,7 @@
                       "memberLocation": "1211:8:1",
                       "memberName": "dataSize",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 213,
+                      "referencedDeclaration": 212,
                       "src": "1169:50:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -9586,23 +9586,23 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 333,
+                  "id": 332,
                   "nodeType": "ExpressionStatement",
                   "src": "1157:62:1"
                 },
                 {
                   "expression": {
-                    "id": 344,
+                    "id": 343,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 334,
+                      "id": 333,
                       "name": "filePath_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 318,
+                      "referencedDeclaration": 317,
                       "src": "1230:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -9616,24 +9616,24 @@
                         "baseExpression": {
                           "baseExpression": {
                             "baseExpression": {
-                              "id": 335,
+                              "id": 334,
                               "name": "weights",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 239,
+                              "referencedDeclaration": 238,
                               "src": "1242:7:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$_$",
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$_$",
                                 "typeString": "mapping(uint256 => mapping(uint256 => mapping(address => struct Federation.Weight storage ref)))"
                               }
                             },
-                            "id": 337,
+                            "id": 336,
                             "indexExpression": {
-                              "id": 336,
+                              "id": 335,
                               "name": "_session",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 311,
+                              "referencedDeclaration": 310,
                               "src": "1250:8:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -9647,17 +9647,17 @@
                             "nodeType": "IndexAccess",
                             "src": "1242:17:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$",
                               "typeString": "mapping(uint256 => mapping(address => struct Federation.Weight storage ref))"
                             }
                           },
-                          "id": 339,
+                          "id": 338,
                           "indexExpression": {
-                            "id": 338,
+                            "id": 337,
                             "name": "_round_num",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 313,
+                            "referencedDeclaration": 312,
                             "src": "1260:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -9671,14 +9671,14 @@
                           "nodeType": "IndexAccess",
                           "src": "1242:29:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$",
                             "typeString": "mapping(address => struct Federation.Weight storage ref)"
                           }
                         },
-                        "id": 342,
+                        "id": 341,
                         "indexExpression": {
                           "expression": {
-                            "id": 340,
+                            "id": 339,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -9689,7 +9689,7 @@
                               "typeString": "msg"
                             }
                           },
-                          "id": 341,
+                          "id": 340,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -9710,11 +9710,11 @@
                         "nodeType": "IndexAccess",
                         "src": "1242:41:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Weight_$218_storage",
+                          "typeIdentifier": "t_struct$_Weight_$217_storage",
                           "typeString": "struct Federation.Weight storage ref"
                         }
                       },
-                      "id": 343,
+                      "id": 342,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -9722,7 +9722,7 @@
                       "memberLocation": "1284:8:1",
                       "memberName": "filePath",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 215,
+                      "referencedDeclaration": 214,
                       "src": "1242:50:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -9735,23 +9735,23 @@
                       "typeString": "string memory"
                     }
                   },
-                  "id": 345,
+                  "id": 344,
                   "nodeType": "ExpressionStatement",
                   "src": "1230:62:1"
                 },
                 {
                   "expression": {
-                    "id": 356,
+                    "id": 355,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 346,
+                      "id": 345,
                       "name": "fileHash_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 320,
+                      "referencedDeclaration": 319,
                       "src": "1303:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -9765,24 +9765,24 @@
                         "baseExpression": {
                           "baseExpression": {
                             "baseExpression": {
-                              "id": 347,
+                              "id": 346,
                               "name": "weights",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 239,
+                              "referencedDeclaration": 238,
                               "src": "1315:7:1",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$_$",
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$_$",
                                 "typeString": "mapping(uint256 => mapping(uint256 => mapping(address => struct Federation.Weight storage ref)))"
                               }
                             },
-                            "id": 349,
+                            "id": 348,
                             "indexExpression": {
-                              "id": 348,
+                              "id": 347,
                               "name": "_session",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 311,
+                              "referencedDeclaration": 310,
                               "src": "1323:8:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -9796,17 +9796,17 @@
                             "nodeType": "IndexAccess",
                             "src": "1315:17:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$_$",
                               "typeString": "mapping(uint256 => mapping(address => struct Federation.Weight storage ref))"
                             }
                           },
-                          "id": 351,
+                          "id": 350,
                           "indexExpression": {
-                            "id": 350,
+                            "id": 349,
                             "name": "_round_num",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 313,
+                            "referencedDeclaration": 312,
                             "src": "1333:10:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -9820,14 +9820,14 @@
                           "nodeType": "IndexAccess",
                           "src": "1315:29:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$218_storage_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Weight_$217_storage_$",
                             "typeString": "mapping(address => struct Federation.Weight storage ref)"
                           }
                         },
-                        "id": 354,
+                        "id": 353,
                         "indexExpression": {
                           "expression": {
-                            "id": 352,
+                            "id": 351,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -9838,7 +9838,7 @@
                               "typeString": "msg"
                             }
                           },
-                          "id": 353,
+                          "id": 352,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -9859,11 +9859,11 @@
                         "nodeType": "IndexAccess",
                         "src": "1315:41:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Weight_$218_storage",
+                          "typeIdentifier": "t_struct$_Weight_$217_storage",
                           "typeString": "struct Federation.Weight storage ref"
                         }
                       },
-                      "id": 355,
+                      "id": 354,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -9871,7 +9871,7 @@
                       "memberLocation": "1357:8:1",
                       "memberName": "fileHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 217,
+                      "referencedDeclaration": 216,
                       "src": "1315:50:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -9884,7 +9884,7 @@
                       "typeString": "string memory"
                     }
                   },
-                  "id": 357,
+                  "id": 356,
                   "nodeType": "ExpressionStatement",
                   "src": "1303:62:1"
                 },
@@ -9892,11 +9892,11 @@
                   "expression": {
                     "components": [
                       {
-                        "id": 358,
+                        "id": 357,
                         "name": "dataSize_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 316,
+                        "referencedDeclaration": 315,
                         "src": "1383:9:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -9904,11 +9904,11 @@
                         }
                       },
                       {
-                        "id": 359,
+                        "id": 358,
                         "name": "filePath_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 318,
+                        "referencedDeclaration": 317,
                         "src": "1393:9:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -9916,11 +9916,11 @@
                         }
                       },
                       {
-                        "id": 360,
+                        "id": 359,
                         "name": "fileHash_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 320,
+                        "referencedDeclaration": 319,
                         "src": "1403:9:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -9928,7 +9928,7 @@
                         }
                       }
                     ],
-                    "id": 361,
+                    "id": 360,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -9941,15 +9941,15 @@
                       "typeString": "tuple(uint256,string memory,string memory)"
                     }
                   },
-                  "functionReturnParameters": 321,
-                  "id": 362,
+                  "functionReturnParameters": 320,
+                  "id": 361,
                   "nodeType": "Return",
                   "src": "1376:37:1"
                 }
               ]
             },
             "functionSelector": "0f39ee72",
-            "id": 364,
+            "id": 363,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -9957,17 +9957,17 @@
             "nameLocation": "1018:9:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 314,
+              "id": 313,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 311,
+                  "id": 310,
                   "mutability": "mutable",
                   "name": "_session",
                   "nameLocation": "1033:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 364,
+                  "scope": 363,
                   "src": "1028:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -9976,7 +9976,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 310,
+                    "id": 309,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1028:4:1",
@@ -9989,12 +9989,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 313,
+                  "id": 312,
                   "mutability": "mutable",
                   "name": "_round_num",
                   "nameLocation": "1048:10:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 364,
+                  "scope": 363,
                   "src": "1043:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -10003,7 +10003,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 312,
+                    "id": 311,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1043:4:1",
@@ -10018,17 +10018,17 @@
               "src": "1027:32:1"
             },
             "returnParameters": {
-              "id": 321,
+              "id": 320,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 316,
+                  "id": 315,
                   "mutability": "mutable",
                   "name": "dataSize_",
                   "nameLocation": "1086:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 364,
+                  "scope": 363,
                   "src": "1081:14:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -10037,7 +10037,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 315,
+                    "id": 314,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1081:4:1",
@@ -10050,12 +10050,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 318,
+                  "id": 317,
                   "mutability": "mutable",
                   "name": "filePath_",
                   "nameLocation": "1111:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 364,
+                  "scope": 363,
                   "src": "1097:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -10064,7 +10064,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 317,
+                    "id": 316,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1097:6:1",
@@ -10077,12 +10077,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 320,
+                  "id": 319,
                   "mutability": "mutable",
                   "name": "fileHash_",
                   "nameLocation": "1136:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 364,
+                  "scope": 363,
                   "src": "1122:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -10091,7 +10091,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 319,
+                    "id": 318,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1122:6:1",
@@ -10105,7 +10105,7 @@
               ],
               "src": "1080:66:1"
             },
-            "scope": 510,
+            "scope": 509,
             "src": "1009:412:1",
             "stateMutability": "view",
             "virtual": false,
@@ -10113,13 +10113,13 @@
           },
           {
             "body": {
-              "id": 393,
+              "id": 392,
               "nodeType": "Block",
               "src": "1568:129:1",
               "statements": [
                 {
                   "expression": {
-                    "id": 382,
+                    "id": 381,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10128,24 +10128,24 @@
                       "expression": {
                         "baseExpression": {
                           "baseExpression": {
-                            "id": 375,
+                            "id": 374,
                             "name": "models",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 246,
+                            "referencedDeclaration": 245,
                             "src": "1579:6:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_struct$_GlobalModel_$223_storage_$_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_struct$_GlobalModel_$222_storage_$_$",
                               "typeString": "mapping(uint256 => mapping(uint256 => struct Federation.GlobalModel storage ref))"
                             }
                           },
-                          "id": 378,
+                          "id": 377,
                           "indexExpression": {
-                            "id": 376,
+                            "id": 375,
                             "name": "_session",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 366,
+                            "referencedDeclaration": 365,
                             "src": "1586:8:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -10159,17 +10159,17 @@
                           "nodeType": "IndexAccess",
                           "src": "1579:16:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_GlobalModel_$223_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_GlobalModel_$222_storage_$",
                             "typeString": "mapping(uint256 => struct Federation.GlobalModel storage ref)"
                           }
                         },
-                        "id": 379,
+                        "id": 378,
                         "indexExpression": {
-                          "id": 377,
+                          "id": 376,
                           "name": "_round_num",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 368,
+                          "referencedDeclaration": 367,
                           "src": "1596:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -10183,11 +10183,11 @@
                         "nodeType": "IndexAccess",
                         "src": "1579:28:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_GlobalModel_$223_storage",
+                          "typeIdentifier": "t_struct$_GlobalModel_$222_storage",
                           "typeString": "struct Federation.GlobalModel storage ref"
                         }
                       },
-                      "id": 380,
+                      "id": 379,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -10195,7 +10195,7 @@
                       "memberLocation": "1608:8:1",
                       "memberName": "filePath",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 220,
+                      "referencedDeclaration": 219,
                       "src": "1579:37:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -10205,11 +10205,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 381,
+                      "id": 380,
                       "name": "_filePath",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 370,
+                      "referencedDeclaration": 369,
                       "src": "1619:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -10222,13 +10222,13 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 383,
+                  "id": 382,
                   "nodeType": "ExpressionStatement",
                   "src": "1579:49:1"
                 },
                 {
                   "expression": {
-                    "id": 391,
+                    "id": 390,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10237,24 +10237,24 @@
                       "expression": {
                         "baseExpression": {
                           "baseExpression": {
-                            "id": 384,
+                            "id": 383,
                             "name": "models",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 246,
+                            "referencedDeclaration": 245,
                             "src": "1639:6:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_struct$_GlobalModel_$223_storage_$_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_struct$_GlobalModel_$222_storage_$_$",
                               "typeString": "mapping(uint256 => mapping(uint256 => struct Federation.GlobalModel storage ref))"
                             }
                           },
-                          "id": 387,
+                          "id": 386,
                           "indexExpression": {
-                            "id": 385,
+                            "id": 384,
                             "name": "_session",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 366,
+                            "referencedDeclaration": 365,
                             "src": "1646:8:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -10268,17 +10268,17 @@
                           "nodeType": "IndexAccess",
                           "src": "1639:16:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_GlobalModel_$223_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_GlobalModel_$222_storage_$",
                             "typeString": "mapping(uint256 => struct Federation.GlobalModel storage ref)"
                           }
                         },
-                        "id": 388,
+                        "id": 387,
                         "indexExpression": {
-                          "id": 386,
+                          "id": 385,
                           "name": "_round_num",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 368,
+                          "referencedDeclaration": 367,
                           "src": "1656:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -10292,11 +10292,11 @@
                         "nodeType": "IndexAccess",
                         "src": "1639:28:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_GlobalModel_$223_storage",
+                          "typeIdentifier": "t_struct$_GlobalModel_$222_storage",
                           "typeString": "struct Federation.GlobalModel storage ref"
                         }
                       },
-                      "id": 389,
+                      "id": 388,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -10304,7 +10304,7 @@
                       "memberLocation": "1668:8:1",
                       "memberName": "fileHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 222,
+                      "referencedDeclaration": 221,
                       "src": "1639:37:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -10314,11 +10314,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 390,
+                      "id": 389,
                       "name": "_fileHash",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 372,
+                      "referencedDeclaration": 371,
                       "src": "1679:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -10331,14 +10331,14 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 392,
+                  "id": 391,
                   "nodeType": "ExpressionStatement",
                   "src": "1639:49:1"
                 }
               ]
             },
             "functionSelector": "3705216e",
-            "id": 394,
+            "id": 393,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -10346,17 +10346,17 @@
             "nameLocation": "1470:8:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 373,
+              "id": 372,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 366,
+                  "id": 365,
                   "mutability": "mutable",
                   "name": "_session",
                   "nameLocation": "1484:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 394,
+                  "scope": 393,
                   "src": "1479:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -10365,7 +10365,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 365,
+                    "id": 364,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1479:4:1",
@@ -10378,12 +10378,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 368,
+                  "id": 367,
                   "mutability": "mutable",
                   "name": "_round_num",
                   "nameLocation": "1499:10:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 394,
+                  "scope": 393,
                   "src": "1494:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -10392,7 +10392,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 367,
+                    "id": 366,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1494:4:1",
@@ -10405,12 +10405,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 370,
+                  "id": 369,
                   "mutability": "mutable",
                   "name": "_filePath",
                   "nameLocation": "1525:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 394,
+                  "scope": 393,
                   "src": "1511:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -10419,7 +10419,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 369,
+                    "id": 368,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1511:6:1",
@@ -10432,12 +10432,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 372,
+                  "id": 371,
                   "mutability": "mutable",
                   "name": "_fileHash",
                   "nameLocation": "1550:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 394,
+                  "scope": 393,
                   "src": "1536:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -10446,7 +10446,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 371,
+                    "id": 370,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1536:6:1",
@@ -10461,12 +10461,12 @@
               "src": "1478:82:1"
             },
             "returnParameters": {
-              "id": 374,
+              "id": 373,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1568:0:1"
             },
-            "scope": 510,
+            "scope": 509,
             "src": "1461:236:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -10474,23 +10474,23 @@
           },
           {
             "body": {
-              "id": 427,
+              "id": 426,
               "nodeType": "Block",
               "src": "1825:168:1",
               "statements": [
                 {
                   "expression": {
-                    "id": 412,
+                    "id": 411,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 405,
+                      "id": 404,
                       "name": "filePath_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 401,
+                      "referencedDeclaration": 400,
                       "src": "1836:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -10503,24 +10503,24 @@
                       "expression": {
                         "baseExpression": {
                           "baseExpression": {
-                            "id": 406,
+                            "id": 405,
                             "name": "models",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 246,
+                            "referencedDeclaration": 245,
                             "src": "1848:6:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_struct$_GlobalModel_$223_storage_$_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_struct$_GlobalModel_$222_storage_$_$",
                               "typeString": "mapping(uint256 => mapping(uint256 => struct Federation.GlobalModel storage ref))"
                             }
                           },
-                          "id": 408,
+                          "id": 407,
                           "indexExpression": {
-                            "id": 407,
+                            "id": 406,
                             "name": "_session",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 396,
+                            "referencedDeclaration": 395,
                             "src": "1855:8:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -10534,17 +10534,17 @@
                           "nodeType": "IndexAccess",
                           "src": "1848:16:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_GlobalModel_$223_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_GlobalModel_$222_storage_$",
                             "typeString": "mapping(uint256 => struct Federation.GlobalModel storage ref)"
                           }
                         },
-                        "id": 410,
+                        "id": 409,
                         "indexExpression": {
-                          "id": 409,
+                          "id": 408,
                           "name": "_round_num",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 398,
+                          "referencedDeclaration": 397,
                           "src": "1865:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -10558,11 +10558,11 @@
                         "nodeType": "IndexAccess",
                         "src": "1848:28:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_GlobalModel_$223_storage",
+                          "typeIdentifier": "t_struct$_GlobalModel_$222_storage",
                           "typeString": "struct Federation.GlobalModel storage ref"
                         }
                       },
-                      "id": 411,
+                      "id": 410,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -10570,7 +10570,7 @@
                       "memberLocation": "1877:8:1",
                       "memberName": "filePath",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 220,
+                      "referencedDeclaration": 219,
                       "src": "1848:37:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -10583,23 +10583,23 @@
                       "typeString": "string memory"
                     }
                   },
-                  "id": 413,
+                  "id": 412,
                   "nodeType": "ExpressionStatement",
                   "src": "1836:49:1"
                 },
                 {
                   "expression": {
-                    "id": 421,
+                    "id": 420,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 414,
+                      "id": 413,
                       "name": "fileHash_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 403,
+                      "referencedDeclaration": 402,
                       "src": "1896:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -10612,24 +10612,24 @@
                       "expression": {
                         "baseExpression": {
                           "baseExpression": {
-                            "id": 415,
+                            "id": 414,
                             "name": "models",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 246,
+                            "referencedDeclaration": 245,
                             "src": "1908:6:1",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_struct$_GlobalModel_$223_storage_$_$",
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_uint256_$_t_struct$_GlobalModel_$222_storage_$_$",
                               "typeString": "mapping(uint256 => mapping(uint256 => struct Federation.GlobalModel storage ref))"
                             }
                           },
-                          "id": 417,
+                          "id": 416,
                           "indexExpression": {
-                            "id": 416,
+                            "id": 415,
                             "name": "_session",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 396,
+                            "referencedDeclaration": 395,
                             "src": "1915:8:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -10643,17 +10643,17 @@
                           "nodeType": "IndexAccess",
                           "src": "1908:16:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_GlobalModel_$223_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_GlobalModel_$222_storage_$",
                             "typeString": "mapping(uint256 => struct Federation.GlobalModel storage ref)"
                           }
                         },
-                        "id": 419,
+                        "id": 418,
                         "indexExpression": {
-                          "id": 418,
+                          "id": 417,
                           "name": "_round_num",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 398,
+                          "referencedDeclaration": 397,
                           "src": "1925:10:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -10667,11 +10667,11 @@
                         "nodeType": "IndexAccess",
                         "src": "1908:28:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_GlobalModel_$223_storage",
+                          "typeIdentifier": "t_struct$_GlobalModel_$222_storage",
                           "typeString": "struct Federation.GlobalModel storage ref"
                         }
                       },
-                      "id": 420,
+                      "id": 419,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -10679,7 +10679,7 @@
                       "memberLocation": "1937:8:1",
                       "memberName": "fileHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 222,
+                      "referencedDeclaration": 221,
                       "src": "1908:37:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -10692,7 +10692,7 @@
                       "typeString": "string memory"
                     }
                   },
-                  "id": 422,
+                  "id": 421,
                   "nodeType": "ExpressionStatement",
                   "src": "1896:49:1"
                 },
@@ -10700,11 +10700,11 @@
                   "expression": {
                     "components": [
                       {
-                        "id": 423,
+                        "id": 422,
                         "name": "filePath_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 401,
+                        "referencedDeclaration": 400,
                         "src": "1964:9:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -10712,11 +10712,11 @@
                         }
                       },
                       {
-                        "id": 424,
+                        "id": 423,
                         "name": "fileHash_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 403,
+                        "referencedDeclaration": 402,
                         "src": "1975:9:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -10724,7 +10724,7 @@
                         }
                       }
                     ],
-                    "id": 425,
+                    "id": 424,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -10737,15 +10737,15 @@
                       "typeString": "tuple(string memory,string memory)"
                     }
                   },
-                  "functionReturnParameters": 404,
-                  "id": 426,
+                  "functionReturnParameters": 403,
+                  "id": 425,
                   "nodeType": "Return",
                   "src": "1956:29:1"
                 }
               ]
             },
             "functionSelector": "495a70b0",
-            "id": 428,
+            "id": 427,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -10753,17 +10753,17 @@
             "nameLocation": "1714:8:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 399,
+              "id": 398,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 396,
+                  "id": 395,
                   "mutability": "mutable",
                   "name": "_session",
                   "nameLocation": "1728:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 428,
+                  "scope": 427,
                   "src": "1723:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -10772,7 +10772,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 395,
+                    "id": 394,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1723:4:1",
@@ -10785,12 +10785,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 398,
+                  "id": 397,
                   "mutability": "mutable",
                   "name": "_round_num",
                   "nameLocation": "1743:10:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 428,
+                  "scope": 427,
                   "src": "1738:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -10799,7 +10799,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 397,
+                    "id": 396,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1738:4:1",
@@ -10814,17 +10814,17 @@
               "src": "1722:32:1"
             },
             "returnParameters": {
-              "id": 404,
+              "id": 403,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 401,
+                  "id": 400,
                   "mutability": "mutable",
                   "name": "filePath_",
                   "nameLocation": "1790:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 428,
+                  "scope": 427,
                   "src": "1776:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -10833,7 +10833,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 400,
+                    "id": 399,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1776:6:1",
@@ -10846,12 +10846,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 403,
+                  "id": 402,
                   "mutability": "mutable",
                   "name": "fileHash_",
                   "nameLocation": "1815:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 428,
+                  "scope": 427,
                   "src": "1801:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -10860,7 +10860,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 402,
+                    "id": 401,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1801:6:1",
@@ -10874,7 +10874,7 @@
               ],
               "src": "1775:50:1"
             },
-            "scope": 510,
+            "scope": 509,
             "src": "1705:288:1",
             "stateMutability": "view",
             "virtual": false,
@@ -10882,13 +10882,13 @@
           },
           {
             "body": {
-              "id": 470,
+              "id": 469,
               "nodeType": "Block",
               "src": "2158:282:1",
               "statements": [
                 {
                   "expression": {
-                    "id": 446,
+                    "id": 445,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10896,24 +10896,24 @@
                     "leftHandSide": {
                       "expression": {
                         "baseExpression": {
-                          "id": 441,
+                          "id": 440,
                           "name": "strategies",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 251,
+                          "referencedDeclaration": 250,
                           "src": "2169:10:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$230_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$229_storage_$",
                             "typeString": "mapping(uint256 => struct Federation.Strategy storage ref)"
                           }
                         },
-                        "id": 443,
+                        "id": 442,
                         "indexExpression": {
-                          "id": 442,
+                          "id": 441,
                           "name": "_session",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 430,
+                          "referencedDeclaration": 429,
                           "src": "2180:8:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -10927,11 +10927,11 @@
                         "nodeType": "IndexAccess",
                         "src": "2169:20:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Strategy_$230_storage",
+                          "typeIdentifier": "t_struct$_Strategy_$229_storage",
                           "typeString": "struct Federation.Strategy storage ref"
                         }
                       },
-                      "id": 444,
+                      "id": 443,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -10939,7 +10939,7 @@
                       "memberLocation": "2190:8:1",
                       "memberName": "algoName",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 225,
+                      "referencedDeclaration": 224,
                       "src": "2169:29:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -10949,11 +10949,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 445,
+                      "id": 444,
                       "name": "_algoName",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 432,
+                      "referencedDeclaration": 431,
                       "src": "2201:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -10966,13 +10966,13 @@
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 447,
+                  "id": 446,
                   "nodeType": "ExpressionStatement",
                   "src": "2169:41:1"
                 },
                 {
                   "expression": {
-                    "id": 453,
+                    "id": 452,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -10980,24 +10980,24 @@
                     "leftHandSide": {
                       "expression": {
                         "baseExpression": {
-                          "id": 448,
+                          "id": 447,
                           "name": "strategies",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 251,
+                          "referencedDeclaration": 250,
                           "src": "2221:10:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$230_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$229_storage_$",
                             "typeString": "mapping(uint256 => struct Federation.Strategy storage ref)"
                           }
                         },
-                        "id": 450,
+                        "id": 449,
                         "indexExpression": {
-                          "id": 449,
+                          "id": 448,
                           "name": "_session",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 430,
+                          "referencedDeclaration": 429,
                           "src": "2232:8:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -11011,11 +11011,11 @@
                         "nodeType": "IndexAccess",
                         "src": "2221:20:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Strategy_$230_storage",
+                          "typeIdentifier": "t_struct$_Strategy_$229_storage",
                           "typeString": "struct Federation.Strategy storage ref"
                         }
                       },
-                      "id": 451,
+                      "id": 450,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -11023,7 +11023,7 @@
                       "memberLocation": "2242:9:1",
                       "memberName": "numRounds",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 227,
+                      "referencedDeclaration": 226,
                       "src": "2221:30:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -11033,11 +11033,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 452,
+                      "id": 451,
                       "name": "_numRounds",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 434,
+                      "referencedDeclaration": 433,
                       "src": "2254:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -11050,13 +11050,13 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 454,
+                  "id": 453,
                   "nodeType": "ExpressionStatement",
                   "src": "2221:43:1"
                 },
                 {
                   "expression": {
-                    "id": 460,
+                    "id": 459,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11064,24 +11064,24 @@
                     "leftHandSide": {
                       "expression": {
                         "baseExpression": {
-                          "id": 455,
+                          "id": 454,
                           "name": "strategies",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 251,
+                          "referencedDeclaration": 250,
                           "src": "2275:10:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$230_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$229_storage_$",
                             "typeString": "mapping(uint256 => struct Federation.Strategy storage ref)"
                           }
                         },
-                        "id": 457,
+                        "id": 456,
                         "indexExpression": {
-                          "id": 456,
+                          "id": 455,
                           "name": "_session",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 430,
+                          "referencedDeclaration": 429,
                           "src": "2286:8:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -11095,11 +11095,11 @@
                         "nodeType": "IndexAccess",
                         "src": "2275:20:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Strategy_$230_storage",
+                          "typeIdentifier": "t_struct$_Strategy_$229_storage",
                           "typeString": "struct Federation.Strategy storage ref"
                         }
                       },
-                      "id": 458,
+                      "id": 457,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -11107,7 +11107,7 @@
                       "memberLocation": "2296:10:1",
                       "memberName": "numClients",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 229,
+                      "referencedDeclaration": 228,
                       "src": "2275:31:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -11117,11 +11117,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 459,
+                      "id": 458,
                       "name": "_numClients",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 436,
+                      "referencedDeclaration": 435,
                       "src": "2309:11:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -11134,7 +11134,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 461,
+                  "id": 460,
                   "nodeType": "ExpressionStatement",
                   "src": "2275:45:1"
                 },
@@ -11142,11 +11142,11 @@
                   "eventCall": {
                     "arguments": [
                       {
-                        "id": 463,
+                        "id": 462,
                         "name": "_algoName",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 432,
+                        "referencedDeclaration": 431,
                         "src": "2363:9:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -11154,11 +11154,11 @@
                         }
                       },
                       {
-                        "id": 464,
+                        "id": 463,
                         "name": "_numRounds",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 434,
+                        "referencedDeclaration": 433,
                         "src": "2374:10:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -11166,11 +11166,11 @@
                         }
                       },
                       {
-                        "id": 465,
+                        "id": 464,
                         "name": "_numClients",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 436,
+                        "referencedDeclaration": 435,
                         "src": "2386:11:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -11193,18 +11193,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 462,
+                      "id": 461,
                       "name": "addStrategyEvent",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 259,
+                      "referencedDeclaration": 258,
                       "src": "2346:16:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_uint256_$_t_uint256_$returns$__$",
                         "typeString": "function (string memory,uint256,uint256)"
                       }
                     },
-                    "id": 466,
+                    "id": 465,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -11220,14 +11220,14 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 467,
+                  "id": 466,
                   "nodeType": "EmitStatement",
                   "src": "2341:57:1"
                 },
                 {
                   "expression": {
                     "hexValue": "5374726174656779206164646564",
-                    "id": 468,
+                    "id": 467,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": true,
@@ -11241,15 +11241,15 @@
                     },
                     "value": "Strategy added"
                   },
-                  "functionReturnParameters": 440,
-                  "id": 469,
+                  "functionReturnParameters": 439,
+                  "id": 468,
                   "nodeType": "Return",
                   "src": "2409:23:1"
                 }
               ]
             },
             "functionSelector": "f905b650",
-            "id": 471,
+            "id": 470,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -11257,17 +11257,17 @@
             "nameLocation": "2039:11:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 437,
+              "id": 436,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 430,
+                  "id": 429,
                   "mutability": "mutable",
                   "name": "_session",
                   "nameLocation": "2056:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 471,
+                  "scope": 470,
                   "src": "2051:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -11276,7 +11276,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 429,
+                    "id": 428,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "2051:4:1",
@@ -11289,12 +11289,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 432,
+                  "id": 431,
                   "mutability": "mutable",
                   "name": "_algoName",
                   "nameLocation": "2080:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 471,
+                  "scope": 470,
                   "src": "2066:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -11303,7 +11303,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 431,
+                    "id": 430,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2066:6:1",
@@ -11316,12 +11316,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 434,
+                  "id": 433,
                   "mutability": "mutable",
                   "name": "_numRounds",
                   "nameLocation": "2096:10:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 471,
+                  "scope": 470,
                   "src": "2091:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -11330,7 +11330,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 433,
+                    "id": 432,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "2091:4:1",
@@ -11343,12 +11343,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 436,
+                  "id": 435,
                   "mutability": "mutable",
                   "name": "_numClients",
                   "nameLocation": "2113:11:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 471,
+                  "scope": 470,
                   "src": "2108:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -11357,7 +11357,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 435,
+                    "id": 434,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "2108:4:1",
@@ -11372,17 +11372,17 @@
               "src": "2050:75:1"
             },
             "returnParameters": {
-              "id": 440,
+              "id": 439,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 439,
+                  "id": 438,
                   "mutability": "mutable",
                   "name": "no",
                   "nameLocation": "2155:2:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 471,
+                  "scope": 470,
                   "src": "2141:16:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -11391,7 +11391,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 438,
+                    "id": 437,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2141:6:1",
@@ -11405,7 +11405,7 @@
               ],
               "src": "2140:18:1"
             },
-            "scope": 510,
+            "scope": 509,
             "src": "2030:410:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -11413,23 +11413,23 @@
           },
           {
             "body": {
-              "id": 508,
+              "id": 507,
               "nodeType": "Block",
               "src": "2564:223:1",
               "statements": [
                 {
                   "expression": {
-                    "id": 487,
+                    "id": 486,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 482,
+                      "id": 481,
                       "name": "algoName_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 476,
+                      "referencedDeclaration": 475,
                       "src": "2575:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
@@ -11441,24 +11441,24 @@
                     "rightHandSide": {
                       "expression": {
                         "baseExpression": {
-                          "id": 483,
+                          "id": 482,
                           "name": "strategies",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 251,
+                          "referencedDeclaration": 250,
                           "src": "2587:10:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$230_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$229_storage_$",
                             "typeString": "mapping(uint256 => struct Federation.Strategy storage ref)"
                           }
                         },
-                        "id": 485,
+                        "id": 484,
                         "indexExpression": {
-                          "id": 484,
+                          "id": 483,
                           "name": "_session",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 473,
+                          "referencedDeclaration": 472,
                           "src": "2598:8:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -11472,11 +11472,11 @@
                         "nodeType": "IndexAccess",
                         "src": "2587:20:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Strategy_$230_storage",
+                          "typeIdentifier": "t_struct$_Strategy_$229_storage",
                           "typeString": "struct Federation.Strategy storage ref"
                         }
                       },
-                      "id": 486,
+                      "id": 485,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -11484,7 +11484,7 @@
                       "memberLocation": "2608:8:1",
                       "memberName": "algoName",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 225,
+                      "referencedDeclaration": 224,
                       "src": "2587:29:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
@@ -11497,23 +11497,23 @@
                       "typeString": "string memory"
                     }
                   },
-                  "id": 488,
+                  "id": 487,
                   "nodeType": "ExpressionStatement",
                   "src": "2575:41:1"
                 },
                 {
                   "expression": {
-                    "id": 494,
+                    "id": 493,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 489,
+                      "id": 488,
                       "name": "numRounds_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 478,
+                      "referencedDeclaration": 477,
                       "src": "2627:10:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -11525,24 +11525,24 @@
                     "rightHandSide": {
                       "expression": {
                         "baseExpression": {
-                          "id": 490,
+                          "id": 489,
                           "name": "strategies",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 251,
+                          "referencedDeclaration": 250,
                           "src": "2640:10:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$230_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$229_storage_$",
                             "typeString": "mapping(uint256 => struct Federation.Strategy storage ref)"
                           }
                         },
-                        "id": 492,
+                        "id": 491,
                         "indexExpression": {
-                          "id": 491,
+                          "id": 490,
                           "name": "_session",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 473,
+                          "referencedDeclaration": 472,
                           "src": "2651:8:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -11556,11 +11556,11 @@
                         "nodeType": "IndexAccess",
                         "src": "2640:20:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Strategy_$230_storage",
+                          "typeIdentifier": "t_struct$_Strategy_$229_storage",
                           "typeString": "struct Federation.Strategy storage ref"
                         }
                       },
-                      "id": 493,
+                      "id": 492,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -11568,7 +11568,7 @@
                       "memberLocation": "2661:9:1",
                       "memberName": "numRounds",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 227,
+                      "referencedDeclaration": 226,
                       "src": "2640:30:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -11581,23 +11581,23 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 495,
+                  "id": 494,
                   "nodeType": "ExpressionStatement",
                   "src": "2627:43:1"
                 },
                 {
                   "expression": {
-                    "id": 501,
+                    "id": 500,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
-                      "id": 496,
+                      "id": 495,
                       "name": "numClients_",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 480,
+                      "referencedDeclaration": 479,
                       "src": "2681:11:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -11609,24 +11609,24 @@
                     "rightHandSide": {
                       "expression": {
                         "baseExpression": {
-                          "id": 497,
+                          "id": 496,
                           "name": "strategies",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 251,
+                          "referencedDeclaration": 250,
                           "src": "2695:10:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$230_storage_$",
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Strategy_$229_storage_$",
                             "typeString": "mapping(uint256 => struct Federation.Strategy storage ref)"
                           }
                         },
-                        "id": 499,
+                        "id": 498,
                         "indexExpression": {
-                          "id": 498,
+                          "id": 497,
                           "name": "_session",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 473,
+                          "referencedDeclaration": 472,
                           "src": "2706:8:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
@@ -11640,11 +11640,11 @@
                         "nodeType": "IndexAccess",
                         "src": "2695:20:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Strategy_$230_storage",
+                          "typeIdentifier": "t_struct$_Strategy_$229_storage",
                           "typeString": "struct Federation.Strategy storage ref"
                         }
                       },
-                      "id": 500,
+                      "id": 499,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -11652,7 +11652,7 @@
                       "memberLocation": "2716:10:1",
                       "memberName": "numClients",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 229,
+                      "referencedDeclaration": 228,
                       "src": "2695:31:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -11665,7 +11665,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 502,
+                  "id": 501,
                   "nodeType": "ExpressionStatement",
                   "src": "2681:45:1"
                 },
@@ -11673,11 +11673,11 @@
                   "expression": {
                     "components": [
                       {
-                        "id": 503,
+                        "id": 502,
                         "name": "algoName_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 476,
+                        "referencedDeclaration": 475,
                         "src": "2744:9:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_memory_ptr",
@@ -11685,11 +11685,11 @@
                         }
                       },
                       {
-                        "id": 504,
+                        "id": 503,
                         "name": "numRounds_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 478,
+                        "referencedDeclaration": 477,
                         "src": "2755:10:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -11697,11 +11697,11 @@
                         }
                       },
                       {
-                        "id": 505,
+                        "id": 504,
                         "name": "numClients_",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 480,
+                        "referencedDeclaration": 479,
                         "src": "2767:11:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -11709,7 +11709,7 @@
                         }
                       }
                     ],
-                    "id": 506,
+                    "id": 505,
                     "isConstant": false,
                     "isInlineArray": false,
                     "isLValue": false,
@@ -11722,15 +11722,15 @@
                       "typeString": "tuple(string memory,uint256,uint256)"
                     }
                   },
-                  "functionReturnParameters": 481,
-                  "id": 507,
+                  "functionReturnParameters": 480,
+                  "id": 506,
                   "nodeType": "Return",
                   "src": "2737:42:1"
                 }
               ]
             },
             "functionSelector": "cfc0cc34",
-            "id": 509,
+            "id": 508,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -11738,17 +11738,17 @@
             "nameLocation": "2457:11:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 474,
+              "id": 473,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 473,
+                  "id": 472,
                   "mutability": "mutable",
                   "name": "_session",
                   "nameLocation": "2474:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 509,
+                  "scope": 508,
                   "src": "2469:13:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -11757,7 +11757,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 472,
+                    "id": 471,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "2469:4:1",
@@ -11772,17 +11772,17 @@
               "src": "2468:15:1"
             },
             "returnParameters": {
-              "id": 481,
+              "id": 480,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 476,
+                  "id": 475,
                   "mutability": "mutable",
                   "name": "algoName_",
                   "nameLocation": "2519:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 509,
+                  "scope": 508,
                   "src": "2505:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -11791,7 +11791,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 475,
+                    "id": 474,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2505:6:1",
@@ -11804,12 +11804,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 478,
+                  "id": 477,
                   "mutability": "mutable",
                   "name": "numRounds_",
                   "nameLocation": "2535:10:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 509,
+                  "scope": 508,
                   "src": "2530:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -11818,7 +11818,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 477,
+                    "id": 476,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "2530:4:1",
@@ -11831,12 +11831,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 480,
+                  "id": 479,
                   "mutability": "mutable",
                   "name": "numClients_",
                   "nameLocation": "2552:11:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 509,
+                  "scope": 508,
                   "src": "2547:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -11845,7 +11845,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 479,
+                    "id": 478,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "2547:4:1",
@@ -11859,14 +11859,14 @@
               ],
               "src": "2504:60:1"
             },
-            "scope": 510,
+            "scope": 509,
             "src": "2448:339:1",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 511,
+        "scope": 510,
         "src": "35:2755:1",
         "usedErrors": []
       }
@@ -11881,12 +11881,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x8767c3eD73150cae42Ed59e02FadEe94Ea425DFf",
-      "transactionHash": "0x48ff072ab2ba6ad754b90550511e8e3480dfcdd626a40ab0b084314930fe90e6"
+      "address": "0xeF7F9846A0C1A2FD8cA0E00673D0774d9886455d",
+      "transactionHash": "0xcdd689a5087a11345b772ab99ccdfe6d2a01feaf3e8809bdf36dfc17428d468f"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-11-25T17:58:43.315Z",
+  "updatedAt": "2022-12-13T17:45:47.973Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
