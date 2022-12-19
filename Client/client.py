@@ -84,14 +84,6 @@ class CifarClient(fl.client.NumPyClient):
             readable_hash = hashlib.sha256(bytes).hexdigest() #hash the file
             print(readable_hash)
 
-        # # Save plot
-        # if not (os.path.exists(f'../Client/Plots')):
-        #     os.mkdir(f"../Client/Plots")
-        # if not (os.path.exists(f'../Client/Plots/Session-{session}')):
-        #     os.mkdir(f"../Client/Plots/Session-{session}")
-        # figname = f"../Client/Plots/Session-{session}/Client-{self.client_id}-Round-{round}.png"
-        # plot_client_result(history,figname)
-
         bcResult = blockchainService.addWeight(_session=session,_round_num=round, _dataSize=num_examples_train, _filePath = filename, _fileHash = readable_hash, client_id=self.client_id)
         return parameters_prime, num_examples_train, results
 
@@ -128,22 +120,3 @@ class CifarClient(fl.client.NumPyClient):
             print(NameError)
 
         return loss, num_examples_test, {"accuracy": accuracy}
-
-
-
-# def plot_client_result(model_history, fname):
-#     acc = model_history.history['accuracy']
-#     val_acc = model_history.history['val_accuracy']
-#     loss = model_history.history['loss']
-#     val_loss = model_history.history['val_loss']
-
-#     epochs = range(len(acc))
-
-#     plt.plot(epochs, acc, 'r', label='Training accuracy')
-#     plt.plot(epochs, val_acc, 'b', label='Validation accuracy')
-#     plt.title('Training and validation accuracy')
-#     plt.xlabel('epochs')
-#     plt.xticks(epochs)
-#     plt.ylabel('accuracy')
-#     plt.legend(loc=0)
-#     plt.savefig(fname)

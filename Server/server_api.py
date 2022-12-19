@@ -7,6 +7,7 @@ import flwr as fl
 from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
+import matplotlib.pyplot as plt
 
 from FLstrategy import *
 from blockchain_service import BlockchainService
@@ -101,17 +102,17 @@ def launch_fl_session(num_rounds:int, is_resume:bool, budget: float):
 
     # Create strategy
     strategy = SaveModelStrategy(
-        fraction_fit=0.3,
-        fraction_evaluate=0.2,
-        min_fit_clients=2,
-        min_evaluate_clients=1,
-        min_available_clients=2,
+        fraction_fit=1,
+        fraction_evaluate=1,
+        min_fit_clients=3,
+        min_evaluate_clients=3,
+        min_available_clients=3,
         evaluate_fn=get_evaluate_fn(model),
         on_fit_config_fn=get_on_fit_config_fn(),
         on_evaluate_config_fn=evaluate_config,
+        initial_parameters = initial_params,
         fit_metrics_aggregation_fn=weighted_average,
         evaluate_metrics_aggregation_fn=weighted_average,
-        initial_parameters = initial_params,
     )
 
     # Add strategy to the blockchain
@@ -135,7 +136,9 @@ def launch_fl_session(num_rounds:int, is_resume:bool, budget: float):
                 number_of_rounds= num_rounds
             )
 
-
+    with open(f'../report/temp/FL_result.json','w') as result:
+        json.dump(strategy.result, result)
+ 
 @server.get('/')
 def testFAST():
     return("Hello from server!")

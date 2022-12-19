@@ -1,9 +1,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+import shutil
 import json
 import requests
 
+import tensorflow as tf
+import flwr as fl
 from pinatapy import PinataPy
 
 with open('../api_key.json', 'r') as api:
@@ -14,7 +17,7 @@ with open('../api_key.json', 'r') as api:
 pinata = PinataPy(api_key, secret_key)
 
 
-def load_last_global_model_weights_from_localDB(model,weights_directory): 
+def load_last_global_model_weights_from_localDB(weights_directory): 
     """
     loads the last received weights in the directory
     in which the global model weights are saved
@@ -31,6 +34,20 @@ def load_last_global_model_weights_from_localDB(model,weights_directory):
     # load the weights from the file
     weights=np.load(latest_weights_file,allow_pickle=True)
     return weights
+
+
+def load_last_global_model_weights_from_IPFS():
+    list_files = pinata.pin_list()
+    URL = 'https://gateway.pinata.cloud/ipfs/'+ list_files['rows'][0]['ipfs_pin_hash']
+    r = requests.get(URL,allow_redirects=True)
+    if not os.path.exists('./temp'):
+        os.makedirs('./temp/')
+    open('./temp/lastParameters.npy', 'wb').write(r.content)
+    latest_parameters = np.load('./temp/lastParameters.npy',allow_pickle=True)
+    latest_weights = fl.common.parameters_to_ndarrays(latest_parameters[0])
+    folder = './temp'
+    shutil.rmtree(folder)
+    return latest_weights
 
 
 def plot_image(i, predictions_array, true_label, img):
@@ -66,3 +83,30 @@ def plot_value_array(i, predictions_array, true_label):
 
     thisplot[predicted_label].set_color('red')
     thisplot[true_label].set_color('blue')
+
+
+def plot_confussion_matrix(model):
+    (_,_),(x_test,y_test) = tf.keras.datasets.cifar10.load_data()
+    y_test = y_test.reshape(-1)
+    predictions = model.predict(x_test)
+    model_preds = predictions.argmax(axis=1)
+
+    confusion  = tf.math.confusion_matrix(
+        labels=y_test,
+        predictions=model_preds,
+        num_classes=10    
+    )
+    conf_matrix = np.array(confusion)
+    # print(conf_matrix)
+
+    fig, ax = plt.subplots(figsize=(7.5, 7.5))
+    ax.matshow(conf_matrix, cmap=plt.cm.Blues, alpha = 1)
+    for i in range(conf_matrix.shape[0]):
+        for j in range(conf_matrix.shape[1]):
+            ax.text(x=j, y=i,s=conf_matrix[i, j]/10, va='center', ha='center', size='x-large')
+
+    plt.xlabel('Predictions', fontsize=18)
+    plt.ylabel('Actuals', fontsize=18)
+    plt.title('Confusion Matrix', fontsize=18)
+    plt.show()        
+    plt.show()

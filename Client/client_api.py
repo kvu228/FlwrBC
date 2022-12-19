@@ -24,7 +24,6 @@ import numpy as np
 # client_id = args.partition
 
 blockchainService = BlockchainService()
-
 app=FastAPI()
 
 
@@ -38,11 +37,11 @@ def load_dataset(client_id:int):
     assert client_id in range(5)
     (x_train, y_train), (x_test, y_test) = tf.keras.datasets.cifar10.load_data()
     return (
-        x_train[client_id * 10000 : (client_id + 1) * 10000],
-        y_train[client_id * 10000 : (client_id + 1) * 10000].reshape(-1),
+        x_train[client_id * 16666 : (client_id + 1) * 16666],
+        y_train[client_id * 16666 : (client_id + 1) * 16666].reshape(-1),
     ), (
-        x_test[client_id * 1000 : (client_id + 1) * 1000],
-        y_test[client_id * 1000 : (client_id + 1) * 1000].reshape(-1),
+        x_test[client_id * 1666 : (client_id + 1) * 1666],
+        y_test[client_id * 1666 : (client_id + 1) * 1666].reshape(-1),
     )
 
 def handle_launch_FL_session(model,x_train, y_train, x_test, y_test, client_id, client_address):
@@ -92,6 +91,8 @@ def load_model():
 @app.post("/participateFL")
 def listen_and_participate(client_id:int):
     client_address = blockchainService.getAddress(client_id)
+    if client_id%2!=0:
+        os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
     model = load_model()
     (x_train, y_train), (x_test, y_test) = load_dataset(client_id)   
     handle_launch_FL_session(model,x_train, y_train, x_test, y_test, client_id, client_address)
@@ -113,51 +114,37 @@ def testFAST(client_id:int):
     return("Hello from client add: ", client_address)
 
 
-@app.get("/getResultBeforeFL")
-def getResultBeforeFL():
+@app.get("/getConfusionMaxtrixBeforeFL")
+def getConfusionMaxtrixBeforeFL():
     model = load_model()
-    (_,_),(x_test,y_test) = tf.keras.datasets.cifar10.load_data()
-    y_test = y_test.reshape(-1)
-    predictions = model.predict(x_test)
+    verify.plot_confussion_matrix(model)
+    # (_,_),(x_test,y_test) = tf.keras.datasets.cifar10.load_data()
+    # y_test = y_test.reshape(-1)
+    # predictions = model.predict(x_test)
 
-    # Plot the first X test images, their predicted labels, and the true labels.
-    # Color correct predictions in blue and incorrect predictions in red.
-    num_rows = 5
-    num_cols = 3
-    num_images = num_rows*num_cols
-    plt.figure(figsize=(2*2*num_cols, 2*num_rows))
-    for i in range(num_images):
-        plt.subplot(num_rows, 2*num_cols, 2*i+1)
-        verify.plot_image(i, predictions[i], y_test, x_test)
-        plt.subplot(num_rows, 2*num_cols, 2*i+2)
-        verify.plot_value_array(i, predictions[i], y_test)
-        plt.tight_layout()
-    plt.show()
+    # # Plot the first X test images, their predicted labels, and the true labels.
+    # # Color correct predictions in blue and incorrect predictions in red.
+    # num_rows = 5
+    # num_cols = 3
+    # num_images = num_rows*num_cols
+    # plt.figure(figsize=(2*2*num_cols, 2*num_rows))
+    # for i in range(num_images):
+    #     plt.subplot(num_rows, 2*num_cols, 2*i+1)
+    #     verify.plot_image(i, predictions[i], y_test, x_test)
+    #     plt.subplot(num_rows, 2*num_cols, 2*i+2)
+    #     verify.plot_value_array(i, predictions[i], y_test)
+    #     plt.tight_layout()
+    # plt.show()
 
 
-@app.get("/getResultAfterFL")
-def getResultAfterFL():
+@app.get("/getConfusionMaxtrixAfterFL")
+def getConfusionMaxtrixAfterFL():
     model = load_model()
-    last_weights = verify.load_last_global_model_weights_from_localDB(model,f'./Global-weights')
-    model.set_weights(last_weights)
-    (_,_),(x_test,y_test) = tf.keras.datasets.cifar10.load_data()
-    y_test = y_test.reshape(-1)
-    predictions = model.predict(x_test)
-
-
-    # Plot the first X test images, their predicted labels, and the true labels.
-    # Color correct predictions in blue and incorrect predictions in red.
-    num_rows = 5
-    num_cols = 3
-    num_images = num_rows*num_cols
-    plt.figure(figsize=(2*2*num_cols, 2*num_rows))
-    for i in range(num_images):
-        plt.subplot(num_rows, 2*num_cols, 2*i+1)
-        verify.plot_image(i, predictions[i], y_test, x_test)
-        plt.subplot(num_rows, 2*num_cols, 2*i+2)
-        verify.plot_value_array(i, predictions[i], y_test)
-        plt.tight_layout()
-    plt.show()
+    # latest_weights = verify.load_last_global_model_weights_from_localDB('./Global-weights')
+    latest_weights = verify.load_last_global_model_weights_from_IPFS()
+    model.set_weights(latest_weights)
+    verify.plot_confussion_matrix(model)
+    
 
 
     

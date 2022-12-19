@@ -5,7 +5,7 @@ from typing import Any, Callable, Dict, List, Optional, Tuple, Union
 import json
 
 import flwr as fl
-from flwr.common import Metrics
+from flwr.common import Metrics, Parameters, Scalar
 import tensorflow as tf
 from blockchain_service import *
 
@@ -43,14 +43,22 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
             min_evaluate_clients=min_evaluate_clients,
             min_available_clients=min_available_clients,
             evaluate_fn=evaluate_fn,
-            fit_metrics_aggregation_fn = fit_metrics_aggregation_fn,
-            evaluate_metrics_aggregation_fn=evaluate_metrics_aggregation_fn,
             on_fit_config_fn=on_fit_config_fn,
             on_evaluate_config_fn=on_evaluate_config_fn,
-            initial_parameters=initial_parameters
+            initial_parameters=initial_parameters,
+            fit_metrics_aggregation_fn = fit_metrics_aggregation_fn,
+            evaluate_metrics_aggregation_fn=evaluate_metrics_aggregation_fn,
         )
         self.contribution={
             'total_data_size': 0
+        }
+        self.result={
+            'aggregated_loss':{
+                0:0
+            },
+            'aggregated_accuracy':{
+                0:0
+            }
         }
 
 
@@ -84,7 +92,11 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
                     readable_hash = hashlib.sha256(bytes).hexdigest() #hash the file
                     print(readable_hash)
                 global_model_BC = blockchainService.addModel(session,server_round,file_path,readable_hash)
-                # pinata.pin_file_to_ipfs(file_path,'/')
+                # pinata.pin_file_to_ipfs(
+                #     path_to_file= file_path,
+                #     ipfs_destination_path = '',
+                #     save_absolute_paths = False,
+                # )
 
 
         # loop through the results and update contribution (pairs of key, value) where
@@ -111,15 +123,39 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
         #     self.contribution['total_data_size'] = total_data_size
         return aggregated_weights
 
+    def aggregate_evaluate(
+        self,
+        server_round: int,
+        results,
+        failures,
+    ) -> Tuple[Optional[float], Dict[str, Scalar]]:
+
+        """Aggregate evaluation accuracy using weighted average."""
+        if not results:
+            return None, {}
+        # Call aggregate_evaluate from base class (FedAvg) to aggregate loss and metrics
+        aggregated_loss, aggregated_metrics = super().aggregate_evaluate(server_round, results, failures)
+
+        # Weigh accuracy of each client by number of examples used
+        accuracies = [r.metrics["accuracy"] * r.num_examples for _, r in results]
+        examples = [r.num_examples for _, r in results]
+
+        # Aggregate and print custom metric
+        aggregated_accuracy = sum(accuracies) / sum(examples)
+        self.result['aggregated_loss'][server_round]=aggregated_loss
+        self.result['aggregated_accuracy'][server_round]=aggregated_accuracy
+
+        # Return aggregated loss and metrics (i.e., aggregated accuracy)
+        return aggregated_loss, {"accuracy": aggregated_accuracy}
 
 
 def get_evaluate_fn(model):
     """Return an evaluation function for server-side evaluation."""
     # Load data and model here to avoid the overhead of doing it in `evaluate` itself
-    (x_train, y_train), _ = tf.keras.datasets.cifar10.load_data()
+    (x_train, y_train), (x_test,y_test) = tf.keras.datasets.cifar10.load_data()
 
-    # Use the last 5k training examples as a validation set
-    x_val, y_val = x_train[45000:50000], y_train[45000:50000]
+    # # Use the last 5k training examples as a validation set
+    # x_val, y_val = x_train[45000:50000], y_train[45000:50000]
 
     # The `evaluate` function will be called after every round
     def evaluate(
@@ -128,7 +164,7 @@ def get_evaluate_fn(model):
         config: Dict[str, fl.common.Scalar],
     ) -> Optional[Tuple[float, Dict[str, fl.common.Scalar]]]:
         model.set_weights(parameters)  # Update model with the latest parameters
-        loss, accuracy = model.evaluate(x_val, y_val)
+        loss, accuracy = model.evaluate(x_test, y_test)
         return loss, {"accuracy": accuracy}
 
     return evaluate
@@ -137,7 +173,7 @@ def get_evaluate_fn(model):
 
 def get_on_fit_config_fn() -> Callable[[int], Dict[str, str]]:
     """Return training configuration dict for each round.
-    Keep batch size fixed at 32, 2 local epochs.
+    Keep batch size fixed at 32, 1 local epochs.
     """
 
     def fit_config(server_round: int) -> Dict[str, str]:
