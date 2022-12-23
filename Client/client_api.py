@@ -36,6 +36,9 @@ def load_dataset(client_id:int):
     """Load 1/5th of the training and test data to simulate a partition."""
     assert client_id in range(5)
     (x_train, y_train), (x_test, y_test) = tf.keras.datasets.cifar10.load_data()
+    # Normalize data
+    x_train = x_train/255.
+    x_test = x_test/255.
     return (
         x_train[client_id * 16666 : (client_id + 1) * 16666],
         y_train[client_id * 16666 : (client_id + 1) * 16666].reshape(-1),

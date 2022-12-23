@@ -1,0 +1,5 @@
+{
+    "api_key": "YOUR_PINATA_API_KEY",
+    "secret_key": "YOUR_SECRET_KEY",
+    "JWT": "YOUR_JWT"
+}

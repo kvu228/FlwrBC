@@ -153,6 +153,8 @@ def get_evaluate_fn(model):
     """Return an evaluation function for server-side evaluation."""
     # Load data and model here to avoid the overhead of doing it in `evaluate` itself
     (x_train, y_train), (x_test,y_test) = tf.keras.datasets.cifar10.load_data()
+    # Normalize data
+    x_test = x_test/255.
 
     # # Use the last 5k training examples as a validation set
     # x_val, y_val = x_train[45000:50000], y_train[45000:50000]
