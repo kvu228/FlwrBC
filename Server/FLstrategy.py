@@ -92,11 +92,11 @@ class SaveModelStrategy(fl.server.strategy.FedAvg):
                     readable_hash = hashlib.sha256(bytes).hexdigest() #hash the file
                     print(readable_hash)
                 global_model_BC = blockchainService.addModel(session,server_round,file_path,readable_hash)
-                # pinata.pin_file_to_ipfs(
-                #     path_to_file= file_path,
-                #     ipfs_destination_path = '',
-                #     save_absolute_paths = False,
-                # )
+                pinata.pin_file_to_ipfs(
+                    path_to_file= file_path,
+                    ipfs_destination_path = '',
+                    save_absolute_paths = False,
+                )
 
 
         # loop through the results and update contribution (pairs of key, value) where

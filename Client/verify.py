@@ -88,6 +88,7 @@ def plot_value_array(i, predictions_array, true_label):
 def plot_confussion_matrix(model):
     (_,_),(x_test,y_test) = tf.keras.datasets.cifar10.load_data()
     y_test = y_test.reshape(-1)
+    x_test = x_test/255.
     predictions = model.predict(x_test)
     model_preds = predictions.argmax(axis=1)
 

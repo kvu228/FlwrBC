@@ -26,6 +26,7 @@ import numpy as np
 blockchainService = BlockchainService()
 app=FastAPI()
 
+print(tf.config.list_physical_devices('GPU'))
 
 class FLlaunch:
     def start(self):
@@ -94,6 +95,8 @@ def load_model():
 @app.post("/participateFL")
 def listen_and_participate(client_id:int):
     client_address = blockchainService.getAddress(client_id)
+    # If client_id is odd number, the program will use GPU to train the model,
+    # else CPU will train the model
     if client_id%2!=0:
         os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
     model = load_model()
