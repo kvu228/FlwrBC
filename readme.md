@@ -1,3 +1,7 @@
+![image](https://github.com/kvu228/FlwrBC/assets/63705942/472eaf2f-e996-4598-8109-212319efb1cf=150x150)
+
+
+
 # Description 📜
 
 This demo demonstrates a federated learning using Flwr framework with a private Etherum blockchain to classify images in CIFAR-10 dataset.
